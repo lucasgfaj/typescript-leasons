@@ -52,23 +52,27 @@ export default class InteiroMatematico{
         return aux;
     }
    //Revisar Não Está de Acordo o Exercício;
-    public produtoPelaSoma(m: number): number {
-        let soma = 0;
-        if (this.n < m)
+     public produtoPelaSoma(m: number): number {
+         let soma = 0;
+       if (this.n < m)
         for (let i = 1; i <= this.n; i++ )
-            soma += m;
-        for (let i = 1; i <= m; i++)
-          soma += this.n;
+             soma += m;
+         for (let i = 1; i <= m; i++)
+         soma += this.n;
 
-        return soma;
-    }   
+         return soma;
+     }   
     
     public elevado(elevado: number): number{
       if (elevado <= 0)
-      return this.n
+        return 0;
+      
+      let resultado = 1;
+      for(let i = 1; i <= this.n; i++)
+        resultado *= this.n;
 
-      for(let i = 1; i <= this.n; i=i ==)
+      return resultado
     }
     
-   
+  
   }
