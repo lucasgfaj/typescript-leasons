@@ -53,7 +53,7 @@ export default class InteiroMatematico{
 
         return aux;
     }
-   //Revisar Não Está de Acordo o Exercício;
+
      public produtoPelaSoma(m: number): number {
       
       if ((m == 0) || (this.n == 0))
@@ -105,11 +105,46 @@ export default class InteiroMatematico{
     }
 
     public serieHarmonica(){
+      let harmonica: number = 0;
+      for(let i = 2; i <= this.n; i ++)
+        harmonica = harmonica +( 1 / i);
 
+      return harmonica;
     }
 
+
     public fibonacci(){
-      
+      let a: number = 1;
+      let b: number = 1;
+      let c: number = 0;
+
+      if (this.n == 0)
+        return c = -1;
+
+      for (let i = 3; i <= this.n; i++){
+       c = a + b;
+       a = b
+       b = c
+      }
+      return c;
+    }
+
+    public tribonacci(){
+      let a: number = 1;
+      let b: number = 1;
+      let c: number = 2;
+      let d: number = 0;
+
+      if (this.n == 0)
+        return c = -1;
+
+      for (let i = 4; i <= this.n; i++){
+       d = a + b + c;
+       a = b;
+       b = c;
+       c = d;
+      }
+      return d;
     }
 
   }

@@ -1,6 +1,6 @@
 import InteiroMatematico from "./InteiroMatematico";
 
-let inteiro = new InteiroMatematico(10);
+let inteiro = new InteiroMatematico(6);
 
 console.log("Tabuada");
 console.log(inteiro.tabuada());
@@ -26,6 +26,10 @@ console.log("Serie Harmônica");
 console.log(inteiro.serieHarmonica());
 console.log()
 
-console.log("Serie ");
+console.log("Fibonacci");
 console.log(inteiro.fibonacci());
+console.log()
+
+console.log("Tribonacci");
+console.log(inteiro.tribonacci());
 console.log()
