@@ -1,6 +1,6 @@
 import InteiroMatematico from "./InteiroMatematico";
 
-let inteiro = new InteiroMatematico(2);
+let inteiro = new InteiroMatematico(10);
 
 console.log("Tabuada");
 console.log(inteiro.tabuada());
@@ -11,7 +11,7 @@ console.log(inteiro.numeroDivisores());
 console.log();
 
 console.log("Produto pela Soma");
-console.log(inteiro.produtoPelaSoma(10));
+console.log(inteiro.produtoPelaSoma(2));
 console.log()
 
 console.log("Elevado");

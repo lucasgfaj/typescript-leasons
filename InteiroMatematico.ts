@@ -43,36 +43,65 @@ export default class InteiroMatematico{
     }
 
     public numeroDivisores(): number{
-        let aux: number = 0;
-        for (let i = 1;  i <= this.n; i++)
+        let aux: number = 1;
+        for (let i = 2;  i <= (this.n/2); i++)
             if(this.n % i == 0)
             aux++;
-        
-        aux++;
+
+        if (this.n != 1)
+          aux++;
+
         return aux;
     }
    //Revisar Não Está de Acordo o Exercício;
      public produtoPelaSoma(m: number): number {
-         let soma = 0;
-       if (this.n < m)
-        for (let i = 1; i <= this.n; i++ )
-             soma += m;
-         for (let i = 1; i <= m; i++)
-         soma += this.n;
+      
+      if ((m == 0) || (this.n == 0))
+        return 0;
 
-         return soma;
+      let n: number = this.n;
+      m = this.modulo(m);
+      if (n > m){
+        let aux: number = n;
+        n = m;
+        m = aux;
+      }
+
+      let resultado: number = m;
+      for (let i = 2; i <= n; i++)
+        resultado = resultado +  m;
+
+      return resultado;
+  
      }   
     
-    public elevado(elevado: number): number{
-      if (elevado <= 0)
+    public elevado(expoente: number): number{
+      if((this.n == 0) || (expoente <=0))
         return 0;
-      
-      let resultado = 1;
-      for(let i = 1; i <= this.n; i++)
-        resultado *= this.n;
 
-      return resultado
-    }
+      if (this.n == 1)
+        return 1; 
+
+      let potencia: number = 1
+
+      for (let i = 1; i <= expoente; i++)
+        potencia = potencia * this.n;
+     
+      // while (expoente > 0) {
+      //   potencia = potencia * this.n; // 1 * 2 = 2 
+      //   expoente--;
+      // }
+      return potencia;
     
-  
+    }
+
+    public fatorial (): number {
+      let resultado: number = 1;
+
+      for (let i = this.n; i >= 1; i--)
+        resultado = resultado * i;
+
+      return resultado;
+    }
+
   }
