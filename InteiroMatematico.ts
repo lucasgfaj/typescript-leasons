@@ -104,4 +104,12 @@ export default class InteiroMatematico{
       return resultado;
     }
 
+    public serieHarmonica(){
+
+    }
+
+    public fibonacci(){
+      
+    }
+
   }

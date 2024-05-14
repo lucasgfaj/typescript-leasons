@@ -6,7 +6,7 @@ console.log("Tabuada");
 console.log(inteiro.tabuada());
 console.log();
 
-console.log("Divisão");
+console.log("Número de Divisores");
 console.log(inteiro.numeroDivisores());
 console.log();
 
@@ -16,4 +16,16 @@ console.log()
 
 console.log("Elevado");
 console.log(inteiro.elevado(2));
+console.log()
+
+console.log("Fatorial");
+console.log(inteiro.fatorial());
+console.log()
+
+console.log("Serie Harmônica");
+console.log(inteiro.serieHarmonica());
+console.log()
+
+console.log("Serie ");
+console.log(inteiro.fibonacci());
 console.log()
