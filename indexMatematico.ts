@@ -33,3 +33,7 @@ console.log()
 console.log("Tribonacci");
 console.log(inteiro.tribonacci());
 console.log()
+
+console.log("IsTriangular");
+console.log(inteiro.isTriangular());
+console.log()

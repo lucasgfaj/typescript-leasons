@@ -147,7 +147,13 @@ export default class InteiroMatematico{
       return d;
     }
 
-    public isTriangular(){
+    public isTriangular(): string {
+
+      for (let i = 1; (i*(i+1))<=(this.n * 2); i++){
+        if((i* (i + 1) /2 ) == this.n)
+        return "'Is Triangular'"
+      }
+      return "'No Triangular'"
 
     }
 
