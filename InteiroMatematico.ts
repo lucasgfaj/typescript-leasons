@@ -147,4 +147,58 @@ export default class InteiroMatematico{
       return d;
     }
 
+    public isTriangular(){
+
+    }
+
+    public isSomaDosQuadrados(){
+
+    }
+
+    public menorDivisor(){
+
+    }
+
+    public mdc(){
+
+    }
+
+    public mdcEficiente(){
+
+    }
+
+    public mmc(){
+
+    }
+    
+    public isPrimo(){
+
+    }
+
+    public isPrimoEficiente(){
+
+    }
+
+    public isPerfeito(){
+
+    }
+
+    public isRaizExata(){
+
+    }
+
+    public tresN(){
+
+    }
+
+    public neperiano(){
+
+    }
+
+    public neperianoEficiente(){
+
+    }
+
+    
+
   }
