@@ -1,6 +1,6 @@
 import InteiroMatematico from "./InteiroMatematico";
 
-let inteiro = new InteiroMatematico(6);
+let inteiro = new InteiroMatematico(10);
 
 console.log("Tabuada");
 console.log(inteiro.tabuada());
@@ -36,4 +36,16 @@ console.log()
 
 console.log("IsTriangular");
 console.log(inteiro.isTriangular());
+console.log()
+
+console.log("IsSomaDosQuadrados");
+console.log(inteiro.isSomaDosQuadrados());
+console.log()
+
+console.log("maiorDivisor");
+console.log(inteiro.maiorDivisor());
+console.log()
+
+console.log("menorDivisor");
+console.log(inteiro.menorDivisor());
 console.log()

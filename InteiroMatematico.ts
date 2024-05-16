@@ -147,23 +147,54 @@ export default class InteiroMatematico{
       return d;
     }
 
-    public isTriangular(): string {
+    public isTriangular(): boolean {
 
       for (let i = 1; (i*(i+1))<=(this.n * 2); i++){
         if((i* (i + 1) /2 ) == this.n)
-        return "'Is Triangular'"
+        return true
       }
-      return "'No Triangular'"
+      return false
 
     }
 
-    public isSomaDosQuadrados(){
+    public isSomaDosQuadrados(): boolean{
+      let calc: number = 0
+      
+      if (this.n < 1000 || this.n > 9999)
+        return false;
 
+        calc = Math.trunc((this.n / 100) + (this.n % 100));
+        calc = calc ** 2;
+
+        if ( calc == this.n)
+          return true;
+          
+      return false;
     }
 
+    public maiorDivisor(): number{
+      let maiorDivisor: number = 1;
+
+      for (let i = 1; i < this.n; i++)
+        if (this.n % i === 0)
+         maiorDivisor = i; 
+      
+
+      return maiorDivisor;
+    } 
+
+    //Resolução para Terminar
     public menorDivisor(){
+      let menorDivisor: number = 2;
 
-    }
+      for (let i = 2; i < this.n; i++)
+        if (this.n % i === 0)
+         menorDivisor = i; 
+
+      return menorDivisor;
+    } 
+
+
 
     public mdc(){
 
