@@ -1,6 +1,6 @@
 import InteiroMatematico from "./InteiroMatematico";
 
-let inteiro = new InteiroMatematico(10);
+let inteiro = new InteiroMatematico(16);
 
 console.log("Tabuada");
 console.log(inteiro.tabuada());
@@ -49,3 +49,12 @@ console.log()
 console.log("menorDivisor");
 console.log(inteiro.menorDivisor());
 console.log()
+
+console.log("mdc");
+console.log(inteiro.mdc(8));
+console.log()
+
+console.log("mdcEficiente");
+console.log(inteiro.mdcEficiente(8));
+console.log()
+

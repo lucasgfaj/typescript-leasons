@@ -183,7 +183,7 @@ export default class InteiroMatematico{
       return maiorDivisor;
     } 
 
-    public menorDivisor(){
+    public menorDivisor(): number{
 
       for (let i = 2; i <= this.n; i++)
         if (this.n % i == 0)
@@ -191,13 +191,35 @@ export default class InteiroMatematico{
 
       return this.n;
     } 
-    
-    public mdc(){
 
+    public mdc(m: number): number{
+      let a = 0;
+      let b = 0;
+      while (m !==0){
+        let temp = m;
+       b =  this.n % m;
+       a = temp;
+      }
+
+      return a;
     }
 
-    public mdcEficiente(){
-
+    public mdcEficiente(m: number): number{
+      let a: number = this.n;
+      let b: number = m;
+  
+      if (a == 0) {
+        return b;
+      }
+  
+      while (b !== 0) {
+        let temp = b;
+        b = a % b;
+        a = temp;
+      }
+  
+      return a;
+    
     }
 
     public mmc(){
