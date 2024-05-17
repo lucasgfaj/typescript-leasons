@@ -183,19 +183,15 @@ export default class InteiroMatematico{
       return maiorDivisor;
     } 
 
-    //Resolução para Terminar
     public menorDivisor(){
-      let menorDivisor: number = 2;
 
-      for (let i = 2; i < this.n; i++)
-        if (this.n % i === 0)
-         menorDivisor = i; 
+      for (let i = 2; i <= this.n; i++)
+        if (this.n % i == 0)
+         return i;
 
-      return menorDivisor;
+      return this.n;
     } 
-
-
-
+    
     public mdc(){
 
     }
