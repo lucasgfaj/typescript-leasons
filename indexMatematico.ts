@@ -1,6 +1,6 @@
 import InteiroMatematico from "./InteiroMatematico";
 
-let inteiro = new InteiroMatematico(16);
+let inteiro = new InteiroMatematico(6);
 
 console.log("Tabuada");
 console.log(inteiro.tabuada());
@@ -57,4 +57,43 @@ console.log()
 console.log("mdcEficiente");
 console.log(inteiro.mdcEficiente(8));
 console.log()
+
+console.log("mmc");
+console.log(inteiro.mmc(18));
+console.log()
+
+console.log("isPrimo");
+console.log(inteiro.isPrimo());
+console.log()
+
+console.log("isPrimoEficiente");
+console.log(inteiro.isPrimoEficiente());
+console.log()
+
+console.log("isPerfeito");
+console.log(inteiro.isPerfeito());
+console.log()
+
+console.log("isRaizExata");
+console.log(inteiro.isRaizExata(15));
+console.log()
+
+console.log("tresN");
+console.log(inteiro.tresN());
+console.log()
+
+console.log("neperiano");
+console.log(inteiro.neperiano());
+console.log()
+
+console.log("neperianoEficiente");
+console.log(inteiro.neperianoEficiente());
+console.log()
+
+console.log("sen");
+console.log(inteiro.sen());
+console.log()
+
+
+
 
