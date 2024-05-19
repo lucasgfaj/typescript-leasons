@@ -300,29 +300,15 @@ export default class InteiroMatematico {
 
 
   public neperiano(): number {
-    let e = 1;
+    let neperiano = 1;
     let fatorial = 1;
 
-    for (let i = 1; i < this.n; i++){
-      fatorial *= i;
-      e += 1 / fatorial;
+    for (let i = 1; i <= this.n; i ++){
+      fatorial = fatorial * i;
+      neperiano = neperiano + 1 / fatorial;
+    } 
+    return neperiano;
     }
-
-    return e;
-  }
-
-  public neperianoEficiente(): number {
-    let e = 1;
-    let termo = 1;
-    let fatorial = 1;
-
-    for (let i = 1; i < this.n; i++)
-      termo *= 1 / i;
-      e += termo;
-
-    
-    return e;
-  }
 
   public sen(): number {
     let seno: number = this.n;

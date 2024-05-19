@@ -86,9 +86,6 @@ console.log("neperiano");
 console.log(inteiro.neperiano());
 console.log()
 
-console.log("neperianoEficiente");
-console.log(inteiro.neperianoEficiente());
-console.log()
 
 console.log("sen");
 console.log(inteiro.sen());
