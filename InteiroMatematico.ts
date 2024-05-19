@@ -319,6 +319,7 @@ export default class InteiroMatematico {
     for (let i = 1; i < 5; i++){
       potencia *= this.n * this.n;
       fatorial *= (2 * i) * (2 * i + 1); 
+      seno += sinal * potencia / fatorial;
       sinal *= -1;
     }
   
