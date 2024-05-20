@@ -1,6 +1,6 @@
 import InteiroMatematico from "./InteiroMatematico";
 
-let inteiro = new InteiroMatematico(6);
+let inteiro = new InteiroMatematico(4);
 
 console.log("Tabuada");
 console.log(inteiro.tabuada());
@@ -75,7 +75,7 @@ console.log(inteiro.isPerfeito());
 console.log()
 
 console.log("isRaizExata");
-console.log(inteiro.isRaizExata(15));
+console.log(inteiro.isRaizExata());
 console.log()
 
 console.log("tresN");

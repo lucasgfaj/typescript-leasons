@@ -247,11 +247,11 @@ export default class InteiroMatematico {
     if (this.n % 2 == 0)
       return false;
 
-    for (let i = 3; i <= this.n; i += 2)
+    for (let i = 3; i < Math.sqrt(this.n); i += 2)
       if (this.n % i == 0)
-        return true;
+        return false;
 
-    return false;
+    return true;
 
   }
 
@@ -272,12 +272,11 @@ export default class InteiroMatematico {
     return -1
   }
 
-  public isRaizExata(n: number): boolean {
+  public isRaizExata(): boolean {
     let odd: number = 1;
-
-    for (let i = 0; n > 0; i++) {
-      n -= odd;
-      odd += 2;
+    let n = this.n;
+    for (let i = 1; n > 0; i+=2) {
+      n -= i;
     }
 
     return n === 0;
@@ -303,27 +302,25 @@ export default class InteiroMatematico {
     let neperiano = 1;
     let fatorial = 1;
 
-    for (let i = 1; i <= this.n; i ++){
-      fatorial = fatorial * i;
+    for (let i = 2; i <= this.n; i ++){
       neperiano = neperiano + 1 / fatorial;
+      fatorial = fatorial * i;
     } 
     return neperiano;
     }
 
-  public sen(): number {
-    let seno: number = this.n;
-    let sinal: number = -1;
-    let potencia: number = this.n;
-    let fatorial: number = 1;
+   public sen(): number {
+     let seno: number = this.n;
+     let sinal: number = -1;
+     let potencia: number = this.n;
+     let fatorial: number = 1;
 
-    for (let i = 1; i < 5; i++){
-      potencia *= this.n * this.n;
-      fatorial *= (2 * i) * (2 * i + 1); 
-      seno += sinal * potencia / fatorial;
-      sinal *= -1;
+     for (let i = 1; i < 5; i++){
+       potencia *= this.n * this.n;
+       fatorial *= (2 * i) * (2 * i + 1); 
+       seno += sinal * potencia / fatorial;
+       sinal *= -1;
+     } 
+   return Math.trunc(seno);
     }
-  
-    return Math.trunc(seno);
-}
-
 }
