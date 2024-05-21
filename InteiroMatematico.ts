@@ -309,18 +309,22 @@ export default class InteiroMatematico {
     return neperiano;
     }
 
-   public sen(): number {
-     let seno: number = this.n;
-     let sinal: number = -1;
-     let potencia: number = this.n;
-     let fatorial: number = 1;
+    public sen(): number {
+      let potencia: number = 1;
+      let fatorial: number = 1;
+      let sen: number = 0;
+  
+      for (let i = 1; i <= this.n ; i++) {
 
-     for (let i = 1; i < 5; i++){
-       potencia *= this.n * this.n;
-       fatorial *= (2 * i) * (2 * i + 1); 
-       seno += sinal * potencia / fatorial;
-       sinal *= -1;
-     } 
-   return Math.trunc(seno);
-    }
+          if (i % 2 == 1)
+              sen -= (this.n ** potencia) / fatorial;
+          else
+              sen += (this.n ** potencia) / fatorial;
+  
+          fatorial *= i;
+          potencia *= this.n;
+      }
+  
+      return sen;
+  }
 }

@@ -1,6 +1,6 @@
 import InteiroMatematico from "./InteiroMatematico";
 
-let inteiro = new InteiroMatematico(4);
+let inteiro = new InteiroMatematico(1000000);
 
 console.log("Tabuada");
 console.log(inteiro.tabuada());
