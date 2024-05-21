@@ -1,6 +1,6 @@
 import InteiroMatematico from "./InteiroMatematico";
 
-let inteiro = new InteiroMatematico(1000000);
+let inteiro = new InteiroMatematico(2);
 
 console.log("Tabuada");
 console.log(inteiro.tabuada());
@@ -86,11 +86,12 @@ console.log("neperiano");
 console.log(inteiro.neperiano());
 console.log()
 
-
 console.log("sen");
 console.log(inteiro.sen());
 console.log()
 
-
+console.log("mesmoDivisor");
+console.log(inteiro.mesmoDivisor(4, 8));
+console.log()
 
 

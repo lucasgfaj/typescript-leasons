@@ -233,11 +233,12 @@ export default class InteiroMatematico {
   public isPrimo(): boolean {
     for (let i = 1; i <= this.n; i++)
       if (this.n % 2 == 0)
-        return true;
+        return false;
 
-    return false;
+    return true;
   }
 
+  // Estudar
   public isPrimoEficiente(): boolean {
 
     if (this.n <= 1)
@@ -282,6 +283,7 @@ export default class InteiroMatematico {
     return n === 0;
   }
   
+  //Estudar
   public tresN(): number {
     let iteracoes: number = 0;
     let n: number = this.n;
@@ -297,7 +299,7 @@ export default class InteiroMatematico {
     return iteracoes;
   }
 
-
+  //Estudar
   public neperiano(): number {
     let neperiano = 1;
     let fatorial = 1;
@@ -309,6 +311,7 @@ export default class InteiroMatematico {
     return neperiano;
     }
 
+    //Estudar
     public sen(): number {
       let potencia: number = 1;
       let fatorial: number = 1;
@@ -326,5 +329,15 @@ export default class InteiroMatematico {
       }
   
       return sen;
+    }
+
+    //Estudar
+    public mesmoDivisor(a: number, b: number): boolean {
+      for (let i = 2; i <= this.n; i++)
+        if (this.n % i === 0 && a % i === 0 && b % i === 0) 
+          return true;
+      
+      return false;
+    }
   }
-}
+  
