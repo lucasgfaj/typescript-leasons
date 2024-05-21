@@ -317,9 +317,9 @@ export default class InteiroMatematico {
       for (let i = 1; i <= this.n ; i++) {
 
           if (i % 2 == 1)
-              sen -= (this.n ** potencia) / fatorial;
+              sen += potencia / fatorial;
           else
-              sen += (this.n ** potencia) / fatorial;
+              sen -= potencia / fatorial;
   
           fatorial *= i;
           potencia *= this.n;
