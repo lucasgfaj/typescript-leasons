@@ -325,7 +325,7 @@ export default class InteiroMatematico {
               sen -= potencia / fatorial;
   
           fatorial *= i;
-          potencia *= this.n;
+          potencia *=  this.n;
       }
   
       return sen;
@@ -333,7 +333,19 @@ export default class InteiroMatematico {
 
     //Estudar
     public mesmoDivisor(a: number, b: number): boolean {
-      for (let i = 2; i <= this.n; i++)
+
+      let variable: number = 0;
+
+      if (this.n > a && this.n > b)
+        variable = this.n;
+
+      if (a > b && a > this.n )
+        variable = a;
+
+      if (b > a && b > this.n )
+        variable = b;
+
+      for (let i = 2; i <= (variable/2); i++)
         if (this.n % i === 0 && a % i === 0 && b % i === 0) 
           return true;
       
@@ -341,3 +353,4 @@ export default class InteiroMatematico {
     }
   }
   
+ 
