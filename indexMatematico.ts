@@ -1,6 +1,6 @@
 import InteiroMatematico from "./InteiroMatematico";
 
-let inteiro = new InteiroMatematico(5);
+let inteiro = new InteiroMatematico(12);
 
 console.log("Tabuada");
 console.log(inteiro.tabuada());
@@ -94,21 +94,5 @@ console.log("mesmoDivisor");
 console.log(inteiro.mesmoDivisor(4, 8));
 console.log()
 
-//Matriz
-console.log("getDivisores");
-console.log(inteiro.getDivisores());
-console.log()
-
-console.log("serieFibonacci");
-console.log(inteiro.serieFibonacci());
-console.log()
-
-console.log("serieDeTribonacci");
-console.log(inteiro.serieDeTribonacci());
-console.log()
-
-console.log("getPrimos");
-console.log(inteiro.getPrimos());
-console.log()
 
 
