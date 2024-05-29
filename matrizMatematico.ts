@@ -62,13 +62,11 @@ export default class matrizMatematico {
         let result: string[] = [];
 
         for (let i = 0; i < this.TAM; i++){
-        
-            let numberArr = this.arr[i];
-
-        if (numberArr %  2 === 0) 
-            result.push(`${numberArr} é par`);
+    
+        if (this.arr[i] %  2 === 0) 
+            result.push(`${this.arr[i]} é par`);
         else 
-        result.push(`${numberArr} é impar`);
+        result.push(`${this.arr[i]} é impar`);
         }
         return result.join("\n");
       }
