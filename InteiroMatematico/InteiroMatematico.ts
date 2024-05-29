@@ -346,6 +346,74 @@ export default class InteiroMatematico {
       
       return false;
     }
+
+    public getDivisores(): number[] {
+      let divisores: number[] = [1];
+  
+      for (let i = 2; i <= this.n; i++) {
+        if (this.n % i === 0) {
+          divisores.push(i);
+        }
+      }
+  
+      return divisores;
+    }
+  
+    public serieFibonacci(): number[] {
+      if (this.n == 0) {
+        return []; // Matriz unidimensional vazia
+      }
+    
+      if (this.n == 1) {
+        return [1];
+      }
+    
+      let termos: number[] = [1, 1]; // Dois primeiros termos
+    
+      for (let i = 3; i < this.n; i++) { // Corrige o loop começando em 2
+        termos.push(termos[i-2] + termos[i-3]);
+      }
+    
+      return termos; // Retorna o array final
+    }
+    
+    public serieDeTribonacci(): number[] {
+      if (this.n == 0)
+        return [];
+  
+      let tribonacci: number[] = [1, 1, 2];
+  
+      if (this.n < 3)
+        return tribonacci.slice(0, this.n);
+  
+      for (let i = 4; i <= this.n; i++)
+        tribonacci[i-1] = tribonacci[i-2] + tribonacci[i-3] + tribonacci[i-4];
+  
+      return tribonacci;
+    }
+  
+    public getPrimos(): number[] {
+      let primos: number[] = [];
+  
+      if (this.n >= 2) {
+        primos.push(2);
+      }
+  
+      for (let i = 3; i <= this.n; i += 2) {
+        let isPrime = true;
+        for (let j = 2; j <= Math.sqrt(i); j++) {
+          if (i % j === 0) {
+            isPrime = false;
+            break;
+          }
+        }
+        if (isPrime) {
+          primos.push(i);
+        }
+      }
+  
+      return primos;
+    }
   }    
   
  

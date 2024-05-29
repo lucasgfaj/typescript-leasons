@@ -1,22 +1,15 @@
-import InteiroMatrizMatematico from "./InteiroMatrizMatematico";
+import matrizMatematico from "./matrizMatematico"
 
-let inteiro = new InteiroMatrizMatematico(12);
+const matriz = new matrizMatematico();
+console.log("Matriz Original - toString");
+console.log(matriz.toString());
+console.log();
 
-//Matriz
-console.log("getDivisores");
-console.log(inteiro.getDivisores());
-console.log()
+console.log("VerificaInteiro")
+console.log(matriz.verificaInteiro(6));
+console.log();
 
-console.log("serieFibonacci");
-console.log(inteiro.serieFibonacci());
-console.log()
-
-console.log("serieDeTribonacci");
-console.log(inteiro.serieDeTribonacci());
-console.log()
-
-console.log("getPrimos");
-console.log(inteiro.getPrimos());
-console.log()
-
+console.log("verificaOcorrência")
+console.log(matriz.verificaOcorrencia());
+console.log();
 
