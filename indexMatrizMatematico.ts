@@ -17,3 +17,8 @@ console.log("somaInteiro")
 console.log(matriz.somaInteiros());
 console.log();
 
+console.log("listEvenOrOdd")
+console.log(matriz.listEvenOrOdd());
+console.log();
+
+

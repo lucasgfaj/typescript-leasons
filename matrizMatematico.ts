@@ -58,5 +58,18 @@ export default class matrizMatematico {
             return sumInteger;
     }
     
-    
+    public listEvenOrOdd (): string {
+        let result: string[] = [];
+
+        for (let i = 0; i < this.TAM; i++){
+        
+            let numberArr = this.arr[i];
+
+        if (numberArr %  2 === 0) 
+            result.push(`${numberArr} é par`);
+        else 
+        result.push(`${numberArr} é impar`);
+        }
+        return result.join("\n");
+      }
 }
