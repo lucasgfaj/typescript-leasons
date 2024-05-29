@@ -39,14 +39,24 @@ export default class matrizMatematico {
             return false;
     }
 
-    public verificaOcorrencia(): number {
+    public verificaOcorrencia(n: number): number {
         let ocorrencias: number = 0;
 
         for(let i = 0; i < this.TAM; i++){
-         
+         if (this.arr[i] == n)
+            ocorrencias++;
         }
             return ocorrencias;
     }
 
+    public somaInteiros(): number {
+        let sumInteger: number = 0;
 
+        for(let i = 0; i < this.TAM; i++){
+            sumInteger += this.arr[i];
+        }
+            return sumInteger;
+    }
+    
+    
 }
