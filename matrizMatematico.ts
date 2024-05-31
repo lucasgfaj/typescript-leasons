@@ -76,19 +76,66 @@ export class matrizUni {
 // Matriz Jardim de Infância
 export class matrizJardim {
     readonly TAM: number = 10;
-    private arrAlunos: number [];
+    private arrAlunos: string [];
 
-    public constructor(){
+    public constructor(...alunosIniciais: string[]){
         this.arrAlunos = [];
-
-        for (let i = 0; i < this.TAM; i++){
-            this.arrAlunos[i] = Math.ceil(Math.random() * 5);
+        
+        for (let i = 0; i < alunosIniciais.length; i++) {
+            this.adicionarAluno(alunosIniciais[i]);
         }
     }
 
+    // Método Privado para Adicionar os Alunos no Array
+    private adicionarAlunoInicial(nome: string): void {
+        if (this.arrAlunos.length < this.TAM) {
+            this.arrAlunos.push(nome); // Adiciona no Array [Luan, Pedro, José]
+            this.arrAlunos.sort();// Ordena o Array 
+        }
+    }
+
+    // Método Adicionar Aluno 
+    public adicionarAluno (nome: string): string {
+        if(this.arrAlunos.length >= this.TAM)
+            return "Turma excedeu o máximo de alunos"
+
+        this.arrAlunos.push(nome);
+        this.arrAlunos.sort();
+
+        return `Aluno ${nome} adicionado com sucesso!`;
+    }
+    
+    //Mostra Array
     public toString(): string {
         return this.arrAlunos.toString();
     }
+
+    //Método Chamar pelo Número e Retornar Nome;
+    public numeroAluno (numero: number): string{
+        if (numero < 0 || numero >= this.TAM){
+            return "Este número não existe"
+        }
+        return this.arrAlunos[numero];
+    }
+
+    //Método Encontrar Aluno pelo Nome e Retornar número da Chamada
+    public nomeAluno (nome: string): string{
+        for (let i = 0; i < this.arrAlunos.length; i++)
+            if (this.arrAlunos[i] === nome) 
+                return `Número do Aluno ${i + 1}`
+
+        return `Aluno não encontrado.`
+    }
+
+    //Método Chamar todos os Alunos e mostrar seus números
+    public listAlunos (): string {
+        let list: string[] = [];
+
+        for (let i = 0; i < this.TAM; i++){
+            list.push(`Número: ${i + 1} Nome: ${this.arrAlunos[i]}`);
+        }
+        return list.join("\n");
+      }
 }
 
 // Matriz Carros Superesportivos

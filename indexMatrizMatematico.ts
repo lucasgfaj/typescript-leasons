@@ -24,7 +24,35 @@ console.log(matriz.listEvenOrOdd());
 console.log();
 
 //Matriz Jardim de Infância
-const matrizJ = new matrizJardim();
+const turma = new matrizJardim("Luan", "Antonella", "José", "Lucas", "Pedro", 
+"Antonio", "João", "Eleandro", "Josué");
+
+console.log("AdicionarAluno")
+console.log(turma.adicionarAluno("Moisés" ));
+// console.log(turma.adicionarAluno("Lucas"));
+//console.log(turma.adicionarAluno("Pedro"));
+console.log();
+
+console.log("toString");
+console.log(turma.toString());
+console.log();
+
+console.log("numeroAluno");
+console.log(turma.numeroAluno(5));
+console.log();
+
+
+console.log("nomeAluno");
+console.log(turma.nomeAluno("Luan"));
+console.log();
+
+console.log("nomeAluno");
+console.log(turma.listAlunos());
+console.log();
+
+
+
+
 
 //Matriz Carros Superesportivos
 const matrizCar = new matrizCarros();
