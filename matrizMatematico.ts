@@ -4,7 +4,8 @@ implementação. Assim, cabe-lhe abstrair do enunciado elementos como classes, a
 para desenvolver os aplicativos pedidos. 
 */
 
-export default class matrizMatematico {
+// Matriz Unidimensional
+export class matrizUni {
     readonly TAM: number = 15;
     private arr: number [];
 
@@ -70,4 +71,40 @@ export default class matrizMatematico {
         }
         return result.join("\n");
       }
+}
+
+// Matriz Jardim de Infância
+export class matrizJardim {
+    readonly TAM: number = 10;
+    private arrAlunos: number [];
+
+    public constructor(){
+        this.arrAlunos = [];
+
+        for (let i = 0; i < this.TAM; i++){
+            this.arrAlunos[i] = Math.ceil(Math.random() * 5);
+        }
+    }
+
+    public toString(): string {
+        return this.arrAlunos.toString();
+    }
+}
+
+// Matriz Carros Superesportivos
+export class matrizCarros {
+    readonly TAM: number = 10;
+    private arrCarros: number [];
+
+    public constructor(){
+        this.arrCarros = [];
+
+        for (let i = 0; i < this.TAM; i++){
+            this.arrCarros[i] = Math.ceil(Math.random() * 5);
+        }
+    }
+
+    public toString(): string {
+        return this.arrCarros.toString();
+    }
 }
