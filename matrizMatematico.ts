@@ -192,3 +192,8 @@ export class matrizCarros {
             return modeloCarro;
         }
     }
+
+
+export class MatrizAleatoria {
+    
+}
