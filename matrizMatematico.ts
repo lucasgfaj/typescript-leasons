@@ -142,16 +142,18 @@ export class matrizJardim {
 export class matrizCarros {
     readonly TAM: number = 10;
     private arrCarros: { modeloCarro: string; veloMax: number }[];
+
     public constructor() {
         this.arrCarros = [];
     }
 
     // Método para adicionar um carro à matriz
-    public adicionarCarro(modeloCarro: string, veloMax: number): void {
+    public adicionarCarro(modeloCarro: string, veloMax: number): boolean {
         if (this.arrCarros.length < this.TAM) {
             this.arrCarros.push({ modeloCarro, veloMax });
+            return true;
         } else {
-            console.log("Capacidade máxima atingida.");
+            return false;
         }
     }
 
@@ -192,6 +194,63 @@ export class matrizCarros {
             return modeloCarro;
         }
     }
+
+
+
+//Carros Superesportivos 
+
+    export class CarrosCorrida {
+    private modeloCarro: string;
+    private maxVelocidade: number;
+
+    public constructor (modeloCarro: string, maxVelocidade: number){
+        this.modeloCarro = modeloCarro;
+        this.maxVelocidade = maxVelocidade;
+    }
+
+    public setModelo(modeloCarro: string): void {
+        this.modeloCarro = modeloCarro;
+    }
+
+    public setVelocidade(maxVelocidade: number): void {
+        this.maxVelocidade = maxVelocidade;
+    }
+
+    public getModelo(): string {
+        return this.modeloCarro;
+    }
+
+    public getVelocidade(): number {
+        return this.maxVelocidade;
+    }
+}
+
+
+//Autodromo
+export class Autodromo {
+    readonly TAM: number = 10;
+    private carros: CarrosCorrida[] = []
+
+    constructor (carros: CarrosCorrida[]){
+        this.carros = carros;
+    }
+
+    public adicionaCarroAutodromo(){
+
+    }
+
+    public mediaAtingidaAutodromo(){
+
+    }
+
+    public superiorMediaAutodromo(){
+
+    }
+
+    public maiorVelocidadeAutodromo(){
+
+    }
+}
 
 
 export class MatrizAleatoria {

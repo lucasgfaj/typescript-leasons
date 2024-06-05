@@ -1,4 +1,4 @@
-import { matrizUni, matrizJardim, matrizCarros } from "./matrizMatematico";
+import { matrizUni, matrizJardim, matrizCarros, MatrizAleatoria, Autodromo } from "./matrizMatematico";
 
 //Matriz Unidimensional
 
@@ -60,9 +60,6 @@ console.log("nomeAluno");
 console.log(turma.listAlunos());
 console.log();
 
-
-
-
 // Criando a instância da classe matrizCarros
 const matrizCar = new matrizCarros();
 
@@ -98,3 +95,24 @@ console.log();
 console.log("Maior Velocidade")
 console.log(matrizCar.maiorVelocidadeTeste());
 console.log();
+
+//Autodromo
+const autodromoTeste = new Autodromo();
+
+console.log();
+console.log("Adicionar Carro");
+autodromoTeste.adicionaCarroAutodromo("Ford Ka", 20);
+autodromoTeste.adicionaCarroAutodromo("Fusca", 70);
+autodromoTeste.adicionaCarroAutodromo("Chevette", 200);
+autodromoTeste.adicionaCarroAutodromo("Opala", 190);
+autodromoTeste.adicionaCarroAutodromo("Astra", 150);
+autodromoTeste.adicionaCarroAutodromo("Gol", 100);
+autodromoTeste.adicionaCarroAutodromo("Caravan", 130);
+autodromoTeste.adicionaCarroAutodromo("HB20", 110);
+autodromoTeste.adicionaCarroAutodromo("Versa", 139);
+autodromoTeste.adicionaCarroAutodromo("Corolla", 120);
+console.log();
+
+//Matriz Aleatoria
+const aleatoria = new MatrizAleatoria();
+
