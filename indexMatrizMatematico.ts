@@ -1,4 +1,4 @@
-import { matrizUni, matrizJardim, matrizCarros, MatrizAleatoria, Autodromo } from "./matrizMatematico";
+import { matrizUni, matrizJardim, matrizCarros, MatrizAleatoria, Autodromo, CarrosCorrida } from "./matrizMatematico";
 
 //Matriz Unidimensional
 
@@ -30,7 +30,7 @@ const turma = new matrizJardim();
 // "Antonio", "João", "Eleandro", "Josué"
 
 console.log("AdicionarAluno")
-console.log(turma.adicionarAluno("Moisés" ));
+console.log(turma.adicionarAluno("Moisés"));
 console.log(turma.adicionarAluno("Lucas"));
 console.log(turma.adicionarAluno("Eleandro"));
 console.log(turma.adicionarAluno("João"));
@@ -96,22 +96,41 @@ console.log("Maior Velocidade")
 console.log(matrizCar.maiorVelocidadeTeste());
 console.log();
 
-//Autodromo
+// Testando o Autódromo
 const autodromoTeste = new Autodromo();
 
+autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("Porsche 911", 311.5));
+autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("Ferrari Enzo", 350));
+autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("Lamborghini Aventador", 355));
+autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("Bugatti Veyron", 407));
+autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("McLaren P1", 350));
+autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("Koenigsegg Agera", 447));
+autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("Pagani Huayra", 383));
+autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("Ford GT", 348));
+autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("Chevrolet Corvette", 330));
+autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("Nissan GT-R", 315));
+
+console.log("Carros no Autódromo:");
+console.log(autodromoTeste.getListagem());
 console.log();
-console.log("Adicionar Carro");
-autodromoTeste.adicionaCarroAutodromo("Ford Ka", 20);
-autodromoTeste.adicionaCarroAutodromo("Fusca", 70);
-autodromoTeste.adicionaCarroAutodromo("Chevette", 200);
-autodromoTeste.adicionaCarroAutodromo("Opala", 190);
-autodromoTeste.adicionaCarroAutodromo("Astra", 150);
-autodromoTeste.adicionaCarroAutodromo("Gol", 100);
-autodromoTeste.adicionaCarroAutodromo("Caravan", 130);
-autodromoTeste.adicionaCarroAutodromo("HB20", 110);
-autodromoTeste.adicionaCarroAutodromo("Versa", 139);
-autodromoTeste.adicionaCarroAutodromo("Corolla", 120);
+
+console.log("Media Atingida no Autódromo:");
+console.log(autodromoTeste.mediaAtingidaAutodromo());
 console.log();
+
+console.log("Carros Superior a Media Atingida no Autódromo:");
+console.log(autodromoTeste.superiorMediaAutodromo());
+console.log();
+
+console.log("Carro com a mairo velocidade no Autódromo:");
+console.log(autodromoTeste.maiorVelocidadeAutodromo());
+console.log();
+
+
+
+
+
+
 
 //Matriz Aleatoria
 const aleatoria = new MatrizAleatoria();

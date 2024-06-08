@@ -7,12 +7,12 @@ para desenvolver os aplicativos pedidos.
 // Matriz Unidimensional
 export class matrizUni {
     readonly TAM: number = 15;
-    private arr: number [];
+    private arr: number[];
 
-    public constructor(){
+    public constructor() {
         this.arr = [];
 
-        for (let i = 0; i < this.TAM; i++){
+        for (let i = 0; i < this.TAM; i++) {
             this.arr[i] = Math.ceil(Math.random() * 5);
         }
     }
@@ -33,54 +33,54 @@ export class matrizUni {
     }*/
 
     public verificaInteiro(n: number): boolean {
-        for(let i = 0; i < this.TAM; i++)
+        for (let i = 0; i < this.TAM; i++)
             if (this.arr[i] == n)
                 return true;
-            
-            return false;
+
+        return false;
     }
 
     public verificaOcorrencia(n: number): number {
         let ocorrencias: number = 0;
 
-        for(let i = 0; i < this.TAM; i++){
-         if (this.arr[i] == n)
-            ocorrencias++;
+        for (let i = 0; i < this.TAM; i++) {
+            if (this.arr[i] == n)
+                ocorrencias++;
         }
-            return ocorrencias;
+        return ocorrencias;
     }
 
     public somaInteiros(): number {
         let sumInteger: number = 0;
 
-        for(let i = 0; i < this.TAM; i++){
+        for (let i = 0; i < this.TAM; i++) {
             sumInteger += this.arr[i];
         }
-            return sumInteger;
+        return sumInteger;
     }
-    
-    public listEvenOrOdd (): string {
+
+    public listEvenOrOdd(): string {
         let result: string[] = [];
 
-        for (let i = 0; i < this.TAM; i++){
-    
-        if (this.arr[i] %  2 === 0) 
-            result.push(`${this.arr[i]} é par`);
-        else 
-        result.push(`${this.arr[i]} é impar`);
+        for (let i = 0; i < this.TAM; i++) {
+
+            if (this.arr[i] % 2 === 0)
+                result.push(`${this.arr[i]} é par`);
+            else
+                result.push(`${this.arr[i]} é impar`);
         }
         return result.join("\n");
-      }
+    }
 }
 
 // Matriz Jardim de Infância
 export class matrizJardim {
     readonly TAM: number = 10;
-    private arrAlunos: string [];
+    private arrAlunos: string[];
 
-    public constructor(...alunosIniciais: string[]){
+    public constructor(...alunosIniciais: string[]) {
         this.arrAlunos = [];
-        
+
         for (let i = 0; i < alunosIniciais.length; i++) {
             this.adicionarAluno(alunosIniciais[i]);
         }
@@ -95,8 +95,8 @@ export class matrizJardim {
     }
 
     // Método Adicionar Aluno 
-    public adicionarAluno (nome: string): boolean {
-        if(this.arrAlunos.length >= this.TAM)
+    public adicionarAluno(nome: string): boolean {
+        if (this.arrAlunos.length >= this.TAM)
             return false;
 
         this.arrAlunos.push(nome);
@@ -104,38 +104,38 @@ export class matrizJardim {
 
         return true;
     }
-    
+
     //Mostra Array
     public toString(): string {
         return this.arrAlunos.toString();
     }
 
     //Método Chamar pelo Número e Retornar Nome;
-    public numeroAluno (numero: number): string{
-        if (numero < 0 || numero >= this.TAM){
+    public numeroAluno(numero: number): string {
+        if (numero < 0 || numero >= this.TAM) {
             return "Este número não existe";
         }
         return this.arrAlunos[numero - 1];
     }
 
     //Método Encontrar Aluno pelo Nome e Retornar número da Chamada
-    public nomeAluno (nome: string): number{
+    public nomeAluno(nome: string): number {
         for (let i = 0; i < this.arrAlunos.length; i++)
-            if (this.arrAlunos[i].toLowerCase() === nome.toLowerCase()) 
+            if (this.arrAlunos[i].toLowerCase() === nome.toLowerCase())
                 return (i + 1)
 
         return -1;
     }
 
     //Método Chamar todos os Alunos e mostrar seus números
-    public listAlunos (): string {
+    public listAlunos(): string {
         let list: string[] = [];
 
-        for (let i = 0; i < this.TAM; i++){
+        for (let i = 0; i < this.TAM; i++) {
             list.push(`Número: ${i + 1} Nome: ${this.arrAlunos[i]}`);
         }
         return list.join("\n");
-      }
+    }
 }
 
 // Definindo a classe matrizCarros
@@ -162,48 +162,47 @@ export class matrizCarros {
         return this.arrCarros.map(carro => `Modelo: ${carro.modeloCarro}, Velocidade Max: ${carro.veloMax}`).join('\n');
     }
 
-        public mediaAtingida(): number {
-            let mediaAtigingida: number = 0;
+    public mediaAtingida(): number {
+        let mediaAtigingida: number = 0;
 
-            for (let i = 0; i < this.TAM; i++){
-                mediaAtigingida += this.arrCarros[i].veloMax;
-            }
+        for (let i = 0; i < this.TAM; i++) {
+            mediaAtigingida += this.arrCarros[i].veloMax;
+        }
         return mediaAtigingida / this.TAM;
-        }
-
-        public superiorMediaAtingida(): string[] {
-            let carrosMaiorQueMedia: string[] = []
-
-            for (let i = 0; i < this.TAM; i++)
-                if (this.arrCarros[i].veloMax > this.mediaAtingida())
-                    carrosMaiorQueMedia.push(this.arrCarros[i].modeloCarro);
-        
-        return carrosMaiorQueMedia;
-        }
-
-        public maiorVelocidadeTeste(): string {
-
-            let maiorVelocidade = 0;
-            let modeloCarro = '';
-
-            for (let i = 0; i < this.TAM; i++){
-                if (this.arrCarros[i].veloMax > maiorVelocidade)
-                    maiorVelocidade = this.arrCarros[i].veloMax
-                    modeloCarro = this.arrCarros[i].modeloCarro;
-                }
-            return modeloCarro;
-        }
     }
 
+    public superiorMediaAtingida(): string[] {
+        let carrosMaiorQueMedia: string[] = []
+
+        for (let i = 0; i < this.TAM; i++)
+            if (this.arrCarros[i].veloMax > this.mediaAtingida())
+                carrosMaiorQueMedia.push(this.arrCarros[i].modeloCarro);
+
+        return carrosMaiorQueMedia;
+    }
+
+    public maiorVelocidadeTeste(): string {
+
+        let maiorVelocidade = 0;
+        let modeloCarro = '';
+
+        for (let i = 0; i < this.TAM; i++) {
+            if (this.arrCarros[i].veloMax > maiorVelocidade)
+                maiorVelocidade = this.arrCarros[i].veloMax
+            modeloCarro = this.arrCarros[i].modeloCarro;
+        }
+        return modeloCarro;
+    }
+}
 
 
-//Carros Superesportivos 
 
-    export class CarrosCorrida {
+// Carros Superesportivos 
+export class CarrosCorrida {
     private modeloCarro: string;
     private maxVelocidade: number;
 
-    public constructor (modeloCarro: string, maxVelocidade: number){
+    public constructor(modeloCarro: string, maxVelocidade: number) {
         this.modeloCarro = modeloCarro;
         this.maxVelocidade = maxVelocidade;
     }
@@ -223,36 +222,72 @@ export class matrizCarros {
     public getVelocidade(): number {
         return this.maxVelocidade;
     }
+
+    public toString(): string {
+        return `${this.modeloCarro} (${this.maxVelocidade} km/h)`;
+    }
 }
 
-
-//Autodromo
+// Autódromo
 export class Autodromo {
     readonly TAM: number = 10;
-    private carros: CarrosCorrida[] = []
+    private carros: CarrosCorrida[] = [];
 
-    constructor (carros: CarrosCorrida[]){
+    constructor(carros: CarrosCorrida[] = []) {
         this.carros = carros;
     }
 
-    public adicionaCarroAutodromo(){
+    public adicionaCarroAutodromo(carro: CarrosCorrida): void {
+        if (this.carros.length < this.TAM) {
+            this.carros.push(carro);
+        } else {
+            console.log("O autódromo está cheio.");
+        }
+    }
+
+    public getListagem(): string {
+        let list: string[] = [];
+
+        for (let i = 0; i < this.TAM; i++) {
+            list.push(`${i + 1}. ${this.carros[i]}`);
+        }
+        return list.join("\n");
+    }
+
+    public mediaAtingidaAutodromo(): number {
+        let sum: number = 0;
+
+        for(let i = 0; i < this.carros.length; i++){
+            sum = sum + this.carros[i].getVelocidade();
+        }
+        return sum / this.carros.length;
+
 
     }
 
-    public mediaAtingidaAutodromo(){
-
+    public superiorMediaAutodromo(): string[] {
+        let arrSuperiorCarro: string [] = [];
+        for (let i = 0; i < this.carros.length; i++){
+            if(this.carros[i].getVelocidade() > this.mediaAtingidaAutodromo())
+                arrSuperiorCarro.push(this.carros[i].getModelo())
+        }
+        return arrSuperiorCarro;
     }
 
-    public superiorMediaAutodromo(){
-
-    }
-
-    public maiorVelocidadeAutodromo(){
-
+    public maiorVelocidadeAutodromo(): CarrosCorrida | null {
+        if (this.carros.length === 0) 
+            return null;
+        
+        let carroMaisVeloz: CarrosCorrida = this.carros[0];
+        for (let i = 1; i < this.carros.length; i++) {
+            if (this.carros[i].getVelocidade() > carroMaisVeloz.getVelocidade()) {
+                carroMaisVeloz = this.carros[i];
+            }
+        }
+        return carroMaisVeloz;
     }
 }
 
-
 export class MatrizAleatoria {
-    
+
 }
