@@ -126,12 +126,6 @@ console.log("Carro com a mairo velocidade no Autódromo:");
 console.log(autodromoTeste.maiorVelocidadeAutodromo());
 console.log();
 
-
-
-
-
-
-
 //Matriz Aleatoria
-const aleatoria = new MatrizAleatoria();
+const aleatoria = new MatrizAleatoria(3, 4);
 

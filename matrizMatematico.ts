@@ -257,7 +257,7 @@ export class Autodromo {
     public mediaAtingidaAutodromo(): number {
         let sum: number = 0;
 
-        for(let i = 0; i < this.carros.length; i++){
+        for (let i = 0; i < this.carros.length; i++) {
             sum = sum + this.carros[i].getVelocidade();
         }
         return sum / this.carros.length;
@@ -266,18 +266,18 @@ export class Autodromo {
     }
 
     public superiorMediaAutodromo(): string[] {
-        let arrSuperiorCarro: string [] = [];
-        for (let i = 0; i < this.carros.length; i++){
-            if(this.carros[i].getVelocidade() > this.mediaAtingidaAutodromo())
+        let arrSuperiorCarro: string[] = [];
+        for (let i = 0; i < this.carros.length; i++) {
+            if (this.carros[i].getVelocidade() > this.mediaAtingidaAutodromo())
                 arrSuperiorCarro.push(this.carros[i].getModelo())
         }
         return arrSuperiorCarro;
     }
 
     public maiorVelocidadeAutodromo(): CarrosCorrida | null {
-        if (this.carros.length === 0) 
+        if (this.carros.length === 0)
             return null;
-        
+
         let carroMaisVeloz: CarrosCorrida = this.carros[0];
         for (let i = 1; i < this.carros.length; i++) {
             if (this.carros[i].getVelocidade() > carroMaisVeloz.getVelocidade()) {
@@ -289,5 +289,20 @@ export class Autodromo {
 }
 
 export class MatrizAleatoria {
+    matriz: number[][];
 
+    constructor(l: number, c: number) {
+        this.matriz = this.criarMatrizAleatoria(l, c);
+    }
+
+    private criarMatrizAleatoria(l: number, c: number): number[][] {
+        const matriz: number[][] = [];
+        for (let i = 0; i < l; i++) {
+            matriz[i] = [];
+            for (let j = 0; j < c; j++) {
+                matriz[i][j] = Math.floor(Math.random() * 100); // Gera números aleatórios de 0 a 99
+            }
+        }
+        return matriz;
+    }
 }
