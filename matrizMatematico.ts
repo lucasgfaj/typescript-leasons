@@ -198,7 +198,7 @@ export class matrizCarros {
 
 
 // Carros Superesportivos 
-export class CarrosCorrida {
+export class CarroCorrida {
     private modeloCarro: string;
     private maxVelocidade: number;
 
@@ -231,13 +231,13 @@ export class CarrosCorrida {
 // Autódromo
 export class Autodromo {
     readonly TAM: number = 10;
-    private carros: CarrosCorrida[] = [];
+    private carros: CarroCorrida[] = [];
 
-    constructor(carros: CarrosCorrida[] = []) {
+    constructor(carros: CarroCorrida[] = []) {
         this.carros = carros;
     }
 
-    public adicionaCarroAutodromo(carro: CarrosCorrida): void {
+    public adicionaCarroAutodromo(carro: CarroCorrida): void {
         if (this.carros.length < this.TAM) {
             this.carros.push(carro);
         } else {
@@ -274,11 +274,11 @@ export class Autodromo {
         return arrSuperiorCarro;
     }
 
-    public maiorVelocidadeAutodromo(): CarrosCorrida | null {
+    public maiorVelocidadeAutodromo(): CarroCorrida | number {
         if (this.carros.length === 0)
-            return null;
+            return 0;
 
-        let carroMaisVeloz: CarrosCorrida = this.carros[0];
+        let carroMaisVeloz: CarroCorrida = this.carros[0];
         for (let i = 1; i < this.carros.length; i++) {
             if (this.carros[i].getVelocidade() > carroMaisVeloz.getVelocidade()) {
                 carroMaisVeloz = this.carros[i];

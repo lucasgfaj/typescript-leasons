@@ -1,4 +1,4 @@
-import { matrizUni, matrizJardim, matrizCarros, MatrizAleatoria, Autodromo, CarrosCorrida } from "./matrizMatematico";
+import { matrizUni, matrizJardim, matrizCarros, MatrizAleatoria, Autodromo, CarroCorrida } from "./matrizMatematico";
 
 //Matriz Unidimensional
 
@@ -99,16 +99,16 @@ console.log();
 // Testando o Autódromo
 const autodromoTeste = new Autodromo();
 
-autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("Porsche 911", 311.5));
-autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("Ferrari Enzo", 350));
-autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("Lamborghini Aventador", 355));
-autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("Bugatti Veyron", 407));
-autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("McLaren P1", 350));
-autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("Koenigsegg Agera", 447));
-autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("Pagani Huayra", 383));
-autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("Ford GT", 348));
-autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("Chevrolet Corvette", 330));
-autodromoTeste.adicionaCarroAutodromo(new CarrosCorrida("Nissan GT-R", 315));
+autodromoTeste.adicionaCarroAutodromo(new CarroCorrida("Porsche 911", 311.5));
+autodromoTeste.adicionaCarroAutodromo(new CarroCorrida("Ferrari Enzo", 350));
+autodromoTeste.adicionaCarroAutodromo(new CarroCorrida("Lamborghini Aventador", 355));
+autodromoTeste.adicionaCarroAutodromo(new CarroCorrida("Bugatti Veyron", 407));
+autodromoTeste.adicionaCarroAutodromo(new CarroCorrida("McLaren P1", 350));
+autodromoTeste.adicionaCarroAutodromo(new CarroCorrida("Koenigsegg Agera", 447));
+autodromoTeste.adicionaCarroAutodromo(new CarroCorrida("Pagani Huayra", 383));
+autodromoTeste.adicionaCarroAutodromo(new CarroCorrida("Ford GT", 348));
+autodromoTeste.adicionaCarroAutodromo(new CarroCorrida("Chevrolet Corvette", 330));
+autodromoTeste.adicionaCarroAutodromo(new CarroCorrida("Nissan GT-R", 315));
 
 console.log("Carros no Autódromo:");
 console.log(autodromoTeste.getListagem());
