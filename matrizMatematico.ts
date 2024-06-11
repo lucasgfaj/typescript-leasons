@@ -389,12 +389,38 @@ export class MatrizAleatoria {
                resultado[i].push(1);
             }
         }
-        return resultado;
+       return resultado ;
     }
 
-    public diagonalPrincipal() { }
+    public diagonalPrincipal(): number[] {
+        let diagonal: number[] = [];
+    
+        // Verifica se a matriz é quadrada para garantir que tenha uma diagonal principal
+        if (this.L !== this.C) {
+            return diagonal;
+        }
+    
+        for (let i = 0; i < this.L; i++) {
+            diagonal.push(this.m[i][i]);
+        }
+    
+        return diagonal;
+    }
 
-    public diagonalSecundaria() { }
+    public diagonalSecundaria(): number[] { 
+        let diagonal: number[] = [];
+    
+        // Verifica se a matriz é quadrada para garantir que tenha uma diagonal principal
+        if (this.L !== this.C) {
+            return diagonal;
+        }
+    
+        for (let i = 0; i < this.L; i++) {
+            diagonal.push(this.m[i][i]);
+        }
+    
+        return diagonal;
+    }
 
     public trianguloSuperiorPrincipal() { }
 

@@ -151,4 +151,8 @@ console.log(aleatoria.somaCom(2));
 console.log("Binaria")
 console.log(aleatoria.binaria());
 
+console.log("Diagonal Principal")
+console.log(aleatoria.diagonalPrincipal());
+
+
 
