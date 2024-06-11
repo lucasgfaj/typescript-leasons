@@ -127,5 +127,28 @@ console.log(autodromoTeste.maiorVelocidadeAutodromo());
 console.log();
 
 //Matriz Aleatoria
-const aleatoria = new MatrizAleatoria(3, 4);
+const aleatoria = new MatrizAleatoria(3, 3);
+
+console.log("toString - Matriz Aleatoria")
+console.log(aleatoria.toString());
+
+console.log("somaLinhaColuna")
+console.log(aleatoria.somaLinhaColuna());
+
+console.log("toString - somaLinhaColuna")
+console.log(aleatoria.toString());
+
+
+console.log("multiplicaPor")
+console.log(aleatoria.multiplicaPor(2));
+
+console.log("toString - MultiplicaPor")
+console.log(aleatoria.toString());
+
+console.log("somaCom")
+console.log(aleatoria.somaCom(2));
+
+console.log("Binaria")
+console.log(aleatoria.binaria());
+
 

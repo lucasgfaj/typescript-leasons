@@ -288,32 +288,124 @@ export class Autodromo {
     }
 }
 
+// export class MatrizAleatoria {
+//     matriz: number[][]; // Declaração do atributo matriz, que é uma matriz de números inteiros
+
+//     constructor(l: number, c: number) { // Definição do construtor, que recebe o número de linhas (l) e colunas (c)
+//         this.matriz = this.criarMatrizAleatoria(l, c); // Inicialização da matriz chamando o método criarMatrizAleatoria
+//     }
+
+//     private criarMatrizAleatoria(l: number, c: number): number[][] { // Definição do método privado criarMatrizAleatoria
+//         const matriz: number[][] = []; // Declaração de uma matriz vazia
+//         for (let i = 0; i < l; i++) { // Loop para percorrer as linhas da matriz
+//             matriz[i] = []; // Inicializa cada linha como um array vazio
+//             for (let j = 0; j < c; j++) { // Loop para percorrer as colunas da matriz
+//                 matriz[i][j] = Math.floor(Math.random() * 100); // Gera um número aleatório entre 0 e 99 e atribui à posição (i, j) da matriz
+//             }
+//         }
+//         return matriz; // Retorna a matriz preenchida com números aleatórios
+//     }
+
+//     listMatriz(): string { // Definição do método toString que retorna uma string representando a matriz
+//         let result = ""; // Inicializa uma string vazia para armazenar a representação da matriz
+//         for (let i = 0; i < this.matriz.length; i++) { // Loop para percorrer as linhas da matriz
+//             for (let j = 0; j < this.matriz[i].length; j++) { // Loop para percorrer as colunas da matriz
+//                 result += this.matriz[i][j] + "\t"; // Adiciona o elemento da posição (i, j) seguido de uma tabulação ("\t") à string result
+//             }
+//             result += "\n"; // Adiciona uma quebra de linha ("\n") ao final de cada linha da matriz
+//         }
+//         return result; // Retorna a string representando a matriz
+//     }
+// }
+
 export class MatrizAleatoria {
-    matriz: number[][]; // Declaração do atributo matriz, que é uma matriz de números inteiros
+    public readonly L: number;
+    public readonly C: number;
+    private m: number[][];
 
-    constructor(l: number, c: number) { // Definição do construtor, que recebe o número de linhas (l) e colunas (c)
-        this.matriz = this.criarMatrizAleatoria(l, c); // Inicialização da matriz chamando o método criarMatrizAleatoria
-    }
+    public constructor(l: number, c: number) {
+        this.L = l;
+        this.C = c;
+        this.m = [];
 
-    private criarMatrizAleatoria(l: number, c: number): number[][] { // Definição do método privado criarMatrizAleatoria
-        const matriz: number[][] = []; // Declaração de uma matriz vazia
-        for (let i = 0; i < l; i++) { // Loop para percorrer as linhas da matriz
-            matriz[i] = []; // Inicializa cada linha como um array vazio
-            for (let j = 0; j < c; j++) { // Loop para percorrer as colunas da matriz
-                matriz[i][j] = Math.floor(Math.random() * 100); // Gera um número aleatório entre 0 e 99 e atribui à posição (i, j) da matriz
+        for (let i = 0; i < this.L; i++) {
+            this.m[i] = [];
+
+            for (let j = 0; j < this.C; j++) {
+                this.m[i][j] = Math.ceil(Math.random() * 100);
             }
         }
-        return matriz; // Retorna a matriz preenchida com números aleatórios
     }
 
-    toString(): string { // Definição do método toString que retorna uma string representando a matriz
-        let result = ""; // Inicializa uma string vazia para armazenar a representação da matriz
-        for (let i = 0; i < this.matriz.length; i++) { // Loop para percorrer as linhas da matriz
-            for (let j = 0; j < this.matriz[i].length; j++) { // Loop para percorrer as colunas da matriz
-                result += this.matriz[i][j] + "\t"; // Adiciona o elemento da posição (i, j) seguido de uma tabulação ("\t") à string result
-            }
-            result += "\n"; // Adiciona uma quebra de linha ("\n") ao final de cada linha da matriz
+    public toString(): string {
+        let aux: string = "";
+
+        for (let i = 0; i < this.L; i++) {
+            for (let j = 0; j < this.C; j++)
+                aux += this.m[i][j] + "\t";
+            //tabulação
+
+            aux += "\n"
         }
-        return result; // Retorna a string representando a matriz
+        return aux;
     }
+
+    public somaLinhaColuna(): void {
+        for (let i = 0; i < this.L; i++) {
+            for (let j = 0; j < this.C; j++)
+                this.m[i][j] = i + j;
+        }
+    }
+
+    public multiplicaPor(n: number): void {
+        for (let i = 0; i < this.L; i++) {
+            for (let j = 0; j < this.C; j++)
+                this.m[i][j] = this.m[i][j] * n;
+        }
+    }
+
+    public somaCom(n: number): number[][] {
+        let resultado: number[][] = []
+
+        for (let i = 0; i < this.L; i++) {
+            resultado[i] = [];
+
+            for (let j = 0; j < this.C; j++) {
+                resultado[i][j] = this.m[i][j] + n;
+            }
+        }
+
+        return resultado;
+    }
+
+    public binaria(): number[][] {
+        let resultado: number[][] = [];
+        for (let i = 0; i < this.L; i++) {
+            resultado[i] = []
+            for (let j = 0; j < this.C; j++) {
+               if (j % 2 == 0)
+               resultado[i].push(0);
+               else
+               resultado[i].push(1);
+            }
+        }
+        return resultado;
+    }
+
+    public diagonalPrincipal() { }
+
+    public diagonalSecundaria() { }
+
+    public trianguloSuperiorPrincipal() { }
+
+    public trianguloInferiorPrincipal() { }
+
+    public trianguloSuperiorSecundaria() { }
+
+    public trianguloInferiorSecundaria() { }
+
+    public transposta() { }
+
+    public multiplicaPorEvoluido() { }
+
 }
