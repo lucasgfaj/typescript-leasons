@@ -393,44 +393,69 @@ export class MatrizAleatoria {
     }
 
     public diagonalPrincipal(): number[] {
-        let diagonal: number[] = [];
+        let diagonalPrincipal: number[] = [];
     
         // Verifica se a matriz é quadrada para garantir que tenha uma diagonal principal
         if (this.L !== this.C) {
-            return diagonal;
+            return diagonalPrincipal;
         }
     
         for (let i = 0; i < this.L; i++) {
-            diagonal.push(this.m[i][i]);
+            diagonalPrincipal.push(this.m[i][i]);
         }
     
-        return diagonal;
+        return diagonalPrincipal;
     }
 
     public diagonalSecundaria(): number[] { 
-        let diagonal: number[] = [];
-    
+        let diagonalSecundaria: number[] = [];
+      
         // Verifica se a matriz é quadrada para garantir que tenha uma diagonal principal
         if (this.L !== this.C) {
-            return diagonal;
+            return diagonalSecundaria;
         }
     
         for (let i = 0; i < this.L; i++) {
-            diagonal.push(this.m[i][i]);
+            diagonalSecundaria.push(this.m[i][this.C - 1 - i]);
         }
     
-        return diagonal;
+        return diagonalSecundaria;
     }
 
-    public trianguloSuperiorPrincipal() { }
+    public trianguloSuperiorPrincipal(): number[] {
+        let trianguloSuperiorPrincipal: number[] = []
+        for (let i = 0; i < this.L; i++){
+            for(let j = 0; i < this.C; j++)
+                
+        }
+     }
 
-    public trianguloInferiorPrincipal() { }
+    public trianguloInferiorPrincipal(): number[] { 
+        let trianguloInferiorPrincipal: number[] = []
+        for (let i = 0; i < this.L; i++){
+            for(let j = 0; i < this.C; j++)
+                
+        }
+    }
 
-    public trianguloSuperiorSecundaria() { }
+    public trianguloSuperiorSecundaria(): number[] {
+        let trianguloSuperiorSecundaria: number[] = []
+        for (let i = 0; i < this.L; i++){
+            for(let j = 0; i < this.C; j++)
+                
+        }
+     }
 
-    public trianguloInferiorSecundaria() { }
+    public trianguloInferiorSecundaria():number[] {
+        let trianguloInferiorSecundaria: number[] = []
+        for (let i = 0; i < this.L; i++){
+            for(let j = 0; i < this.C; j++)       
+        }
+     }
 
-    public transposta() { }
+    public transposta() {
+        
+     }
 
     public multiplicaPorEvoluido() { }
 

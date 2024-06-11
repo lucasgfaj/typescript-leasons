@@ -154,5 +154,11 @@ console.log(aleatoria.binaria());
 console.log("Diagonal Principal")
 console.log(aleatoria.diagonalPrincipal());
 
+console.log("Diagonal Secundaria")
+console.log(aleatoria.diagonalSecundaria());
+
+console.log("trianguloSuperiorPrincipal")
+console.log(aleatoria.trianguloSuperiorPrincipal());
+
 
 
