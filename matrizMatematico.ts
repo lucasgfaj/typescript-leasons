@@ -381,60 +381,56 @@ export class MatrizAleatoria {
     public binaria(): number[][] {
         let resultado: number[][] = [];
         for (let i = 0; i < this.L; i++) {
-            resultado[i] = []
+            resultado[i] = [];
             for (let j = 0; j < this.C; j++) {
-               if (j % 2 == 0)
-               resultado[i].push(0);
-               else
-               resultado[i].push(1);
+                resultado[i][j] = this.m[i][j] % 2;
             }
         }
-       return resultado ;
+        return resultado;
     }
 
     public diagonalPrincipal(): number[] {
         let diagonalPrincipal: number[] = [];
-    
-        // Verifica se a matriz é quadrada para garantir que tenha uma diagonal principal
+
         if (this.L !== this.C) {
             return diagonalPrincipal;
         }
-    
+
         for (let i = 0; i < this.L; i++) {
             diagonalPrincipal.push(this.m[i][i]);
         }
-    
+
         return diagonalPrincipal;
     }
 
-    public diagonalSecundaria(): number[] { 
+    public diagonalSecundaria(): number[] {
         let diagonalSecundaria: number[] = [];
-      
+
         // Verifica se a matriz é quadrada para garantir que tenha uma diagonal principal
         if (this.L !== this.C) {
             return diagonalSecundaria;
         }
-    
+
         for (let i = 0; i < this.L; i++) {
             diagonalSecundaria.push(this.m[i][this.C - 1 - i]);
         }
-    
+
         return diagonalSecundaria;
     }
 
     public trianguloSuperiorPrincipal(): number[] {
         let trianguloSuperiorPrincipal: number[] = []
-        for (let i = 0; i < this.L; i++){
-            for(let j = i + 1; j < this.C; j++)
-            trianguloSuperiorPrincipal.push(this.m[i][j])
+        for (let i = 0; i < this.L; i++) {
+            for (let j = i + 1; j < this.C; j++)
+                trianguloSuperiorPrincipal.push(this.m[i][j])
         }
         return trianguloSuperiorPrincipal;
-     }
+    }
 
-    public trianguloInferiorPrincipal(): number[] { 
+    public trianguloInferiorPrincipal(): number[] {
         let trianguloInferiorPrincipal: number[] = []
-        for (let i = 0; i < this.L; i++){
-            for(let j = 0; j < i; j++)
+        for (let i = 0; i < this.L; i++) {
+            for (let j = 0; j < i; j++)
                 trianguloInferiorPrincipal.push(this.m[i][j])
         }
         return trianguloInferiorPrincipal;
@@ -444,46 +440,46 @@ export class MatrizAleatoria {
     //Estudar
     public trianguloSuperiorSecundaria(): number[] {
         let trianguloSuperiorSecundaria: number[] = []
-        for (let i = 0; i < this.L; i++){
-            for(let j = 0; j < this.C - 1 - i; j++)
+        for (let i = 0; i < this.L; i++) {
+            for (let j = 0; j < this.C - 1 - i; j++)
                 trianguloSuperiorSecundaria.push(this.m[i][j])
         }
         return trianguloSuperiorSecundaria;
-     }
+    }
 
     //Estudar
     public trianguloInferiorSecundaria(): number[] {
         let trianguloInferiorSecundaria: number[] = []
-        for (let i = 0; i < this.L; i++){
-            for(let j = 0; j > this.L - 1 - i; j++) 
-                trianguloInferiorSecundaria.push(this.m[i][j])      
+        for (let i = 0; i < this.L; i++) {
+            for (let j = 0; j > this.L - 1 - i; j++)
+                trianguloInferiorSecundaria.push(this.m[i][j])
         }
         return trianguloInferiorSecundaria;
-     }
+    }
 
 
-     //Estudar e refazer
-     public transposta(): number[][] {
+    //Estudar e refazer
+    public transposta(): number[][] {
         // Matriz para armazenar a transposta
         let transpostaMatrix: number[][] = [];
-    
+
         // Verifica se a matriz não está vazia
         if (this.m.length === 0 || this.m[0].length === 0) {
             return transpostaMatrix;
         }
-    
+
         // Itera sobre as colunas da matriz original
         for (let j = 0; j < this.m[0].length; j++) {
             // Cria uma nova linha na matriz transposta
             transpostaMatrix[j] = [];
-            
+
             // Itera sobre as linhas da matriz original
             for (let i = 0; i < this.m.length; i++) {
                 // Adiciona o elemento correspondente da matriz original na posição transposta
                 transpostaMatrix[j][i] = this.m[i][j];
             }
         }
-    
+
         return transpostaMatrix;
     }
 
@@ -494,27 +490,27 @@ export class MatrizAleatoria {
         if (this.m[0].length !== N.length) {
             return "Erro: As matrizes não podem ser multiplicadas.";
         }
-    
+
         // Criar uma matriz para armazenar o resultado da multiplicação
         let resultado: number[][] = [];
-    
+
         // Iterar sobre as linhas de M
         for (let i = 0; i < this.m.length; i++) {
             resultado[i] = [];
-    
+
             // Iterar sobre as colunas de N
             for (let j = 0; j < N[0].length; j++) {
                 let sum = 0;
-    
+
                 // Iterar sobre os elementos das linhas de M e colunas de N
                 for (let k = 0; k < this.m[i].length; k++) {
                     sum += this.m[i][k] * N[k][j];
                 }
-    
+
                 resultado[i][j] = sum;
             }
         }
-    
+
         return resultado;
     }
 
