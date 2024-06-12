@@ -364,15 +364,22 @@ export class MatrizAleatoria {
         }
     }
 
-    public somaCom(n: number): number[][] {
+    public somaCom(n: number[][]): number[][] {
+
+        if (n.length != this.L)
+            return [];
+
+        if (n[0].length != this.C)
+            return [];
+
         let resultado: number[][] = []
 
         for (let i = 0; i < this.L; i++) {
             resultado[i] = [];
 
             for (let j = 0; j < this.C; j++) {
-                resultado[i][j] = this.m[i][j] + n;
-            }
+                resultado[i][j] = this.m[i][j] + n[i][j];
+            }   
         }
 
         return resultado;
@@ -402,118 +409,6 @@ export class MatrizAleatoria {
 
         return diagonalPrincipal;
     }
-
-    public diagonalSecundaria(): number[] {
-        let diagonalSecundaria: number[] = [];
-
-        // Verifica se a matriz é quadrada para garantir que tenha uma diagonal principal
-        if (this.L !== this.C) {
-            return diagonalSecundaria;
-        }
-
-        for (let i = 0; i < this.L; i++) {
-            diagonalSecundaria.push(this.m[i][this.C - 1 - i]);
-        }
-
-        return diagonalSecundaria;
-    }
-
-    public trianguloSuperiorPrincipal(): number[] {
-        let trianguloSuperiorPrincipal: number[] = []
-        for (let i = 0; i < this.L; i++) {
-            for (let j = i + 1; j < this.C; j++)
-                trianguloSuperiorPrincipal.push(this.m[i][j])
-        }
-        return trianguloSuperiorPrincipal;
-    }
-
-    public trianguloInferiorPrincipal(): number[] {
-        let trianguloInferiorPrincipal: number[] = []
-        for (let i = 0; i < this.L; i++) {
-            for (let j = 0; j < i; j++)
-                trianguloInferiorPrincipal.push(this.m[i][j])
-        }
-        return trianguloInferiorPrincipal;
-    }
-
-
-    //Estudar
-    public trianguloSuperiorSecundaria(): number[] {
-        let trianguloSuperiorSecundaria: number[] = []
-        for (let i = 0; i < this.L; i++) {
-            for (let j = 0; j < this.C - 1 - i; j++)
-                trianguloSuperiorSecundaria.push(this.m[i][j])
-        }
-        return trianguloSuperiorSecundaria;
-    }
-
-    //Estudar
-    public trianguloInferiorSecundaria(): number[] {
-        let trianguloInferiorSecundaria: number[] = []
-        for (let i = 0; i < this.L; i++) {
-            for (let j = 0; j > this.L - 1 - i; j++)
-                trianguloInferiorSecundaria.push(this.m[i][j])
-        }
-        return trianguloInferiorSecundaria;
-    }
-
-
-    //Estudar e refazer
-    public transposta(): number[][] {
-        // Matriz para armazenar a transposta
-        let transpostaMatrix: number[][] = [];
-
-        // Verifica se a matriz não está vazia
-        if (this.m.length === 0 || this.m[0].length === 0) {
-            return transpostaMatrix;
-        }
-
-        // Itera sobre as colunas da matriz original
-        for (let j = 0; j < this.m[0].length; j++) {
-            // Cria uma nova linha na matriz transposta
-            transpostaMatrix[j] = [];
-
-            // Itera sobre as linhas da matriz original
-            for (let i = 0; i < this.m.length; i++) {
-                // Adiciona o elemento correspondente da matriz original na posição transposta
-                transpostaMatrix[j][i] = this.m[i][j];
-            }
-        }
-
-        return transpostaMatrix;
-    }
-
-
-    //Estudar
-    public multiplicaPorEvoluido(N: number[][]): number[][] | string {
-        // Verificar se as matrizes podem ser multiplicadas
-        if (this.m[0].length !== N.length) {
-            return "Erro: As matrizes não podem ser multiplicadas.";
-        }
-
-        // Criar uma matriz para armazenar o resultado da multiplicação
-        let resultado: number[][] = [];
-
-        // Iterar sobre as linhas de M
-        for (let i = 0; i < this.m.length; i++) {
-            resultado[i] = [];
-
-            // Iterar sobre as colunas de N
-            for (let j = 0; j < N[0].length; j++) {
-                let sum = 0;
-
-                // Iterar sobre os elementos das linhas de M e colunas de N
-                for (let k = 0; k < this.m[i].length; k++) {
-                    sum += this.m[i][k] * N[k][j];
-                }
-
-                resultado[i][j] = sum;
-            }
-        }
-
-        return resultado;
-    }
-
-
-
+ 
+    public diagonalSecundaria(){}
 }

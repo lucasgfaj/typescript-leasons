@@ -139,26 +139,25 @@ console.log("toString - somaLinhaColuna")
 console.log(aleatoria.toString());
 
 
-console.log("multiplicaPor")
-console.log(aleatoria.multiplicaPor(2));
+// console.log("multiplicaPor")
+// console.log(aleatoria.multiplicaPor(2));
 
-console.log("toString - MultiplicaPor")
-console.log(aleatoria.toString());
+// console.log("toString - MultiplicaPor")
+// console.log(aleatoria.toString());
 
-console.log("somaCom")
-console.log(aleatoria.somaCom(2));
+// Crie outra matriz aleatória de 3x3
+// const outraMatriz = new MatrizAleatoria(2, 2);
+// console.log("somaCom");
+// console.log(aleatoria.somaCom(outraMatriz));
 
-console.log("Binaria")
-console.log(aleatoria.binaria());
+// console.log("Binaria")
+// console.log(aleatoria.binaria());
 
 console.log("Diagonal Principal")
 console.log(aleatoria.diagonalPrincipal());
 
 console.log("Diagonal Secundaria")
 console.log(aleatoria.diagonalSecundaria());
-
-console.log("trianguloSuperiorPrincipal")
-console.log(aleatoria.trianguloSuperiorPrincipal());
 
 
 
