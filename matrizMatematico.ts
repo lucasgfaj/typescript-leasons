@@ -396,13 +396,15 @@ export class MatrizAleatoria {
         return resultado;
     }
 
+    public isQuadrada(): boolean {
+        return (this.L == this.C);
+     }
+
     public diagonalPrincipal(): number[] {
         let diagonalPrincipal: number[] = [];
 
-        if (this.L !== this.C) {
-            return diagonalPrincipal;
-        }
 
+        if(this.isQuadrada())
         for (let i = 0; i < this.L; i++) {
             diagonalPrincipal.push(this.m[i][i]);
         }
@@ -410,5 +412,14 @@ export class MatrizAleatoria {
         return diagonalPrincipal;
     }
  
-    public diagonalSecundaria(){}
+    public diagonalSecundaria(){
+        let diagonalSecundaria: number [] = [];
+
+        if(this.isQuadrada()){
+        for (let i = 0; i < this.L; i++)
+            diagonalSecundaria.push(this.m[i][this.C - 1 - i])
+    }
+}
+
+    
 }
