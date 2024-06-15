@@ -379,7 +379,7 @@ export class MatrizAleatoria {
 
             for (let j = 0; j < this.C; j++) {
                 resultado[i][j] = this.m[i][j] + n[i][j];
-            }   
+            }
         }
 
         return resultado;
@@ -398,28 +398,184 @@ export class MatrizAleatoria {
 
     public isQuadrada(): boolean {
         return (this.L == this.C);
-     }
+    }
 
     public diagonalPrincipal(): number[] {
         let diagonalPrincipal: number[] = [];
 
 
-        if(this.isQuadrada())
-        for (let i = 0; i < this.L; i++) {
-            diagonalPrincipal.push(this.m[i][i]);
-        }
+        if (this.isQuadrada())
+            for (let i = 0; i < this.L; i++) {
+                diagonalPrincipal.push(this.m[i][i]);
+            }
 
         return diagonalPrincipal;
     }
- 
-    public diagonalSecundaria(){
-        let diagonalSecundaria: number [] = [];
 
-        if(this.isQuadrada()){
-        for (let i = 0; i < this.L; i++)
-            diagonalSecundaria.push(this.m[i][this.C - 1 - i])
+    public diagonalSecundaria() {
+        let diagonalSecundaria: number[] = [];
+
+        if (this.isQuadrada()) {
+            for (let i = 0; i < this.L; i++)
+                diagonalSecundaria.push(this.m[i][this.C - 1 - i])
+        }
     }
-}
 
-    
+    public trianguloSuperiorPrincipal(): string {
+        if (!this.isQuadrada())
+            return "Não é uma matriz quadrada\n"; //Se não for uma matriz quadrada return isto
+
+        let results: string = ""; // Criando variavel parece receber a matriz
+
+        for (let i = 0; i < this.L; i++) { // For das Linhas
+            for (let j = 0; j < this.C; j++) { // For das Colunas
+                if (j > i)//Se Numero da Coluna Maior de Linha
+                    results += this.m[i][j]; // Resultado recebe ele mais matriz[Linha][Coluna]
+                else  //Senão
+                    results += ".."; // recebe ele + ... paraca um espaço em branco
+
+                results += "\t"; //Da um espaço // Tabulação
+            }
+
+            results += "\n"; //Pula linha
+        }
+
+        return results;
+    }
+
+    public trianguloInferiorPrincipal() {
+        if (!this.isQuadrada())
+            return "Não é uma matriz quadrada\n"; //Se não for uma matriz quadrada return isto
+
+        let results: string = ""; // Criando variavel parece receber a matriz
+
+        for (let i = 0; i < this.L; i++) { // For das Linhas
+            for (let j = 0; j < this.C; j++) { // For das Colunas
+                if (j < i)//Se Numero da Coluna Menor de Linha
+                    results += this.m[i][j]; // Resultado recebe ele mais matriz[Linha][Coluna]
+                else  //Senão
+                    results += ".."; // recebe ele + ... paraca um espaço em branco
+
+                results += "\t"; //Da um espaço // Tabulação
+            }
+
+            results += "\n"; //Pula linha
+        }
+
+        return results;
+    }
+
+    public trianguloSuperiorSecundaria() {
+        if (!this.isQuadrada())
+            return "Não é uma matriz quadrada\n"; //Se não for uma matriz quadrada return isto
+
+        let results: string = ""; // Criando variavel parece receber a matriz
+
+        for (let i = 0; i < this.L; i++) { // For das Linhas
+            for (let j = 0; j < this.C; j++) { // For das Colunas
+                if (j < (this.L - 1 - i))//Se Numero da Coluna Menor de Linha
+                    results += this.m[i][j]; // Resultado recebe ele mais matriz[Linha][Coluna]
+                else  //Senão
+                    results += ".."; // recebe ele + ... paraca um espaço em branco
+
+                results += "\t"; //Da um espaço // Tabulação
+            }
+
+            results += "\n"; //Pula linha
+        }
+
+        return results;
+    }
+
+    public trianguloInferiorSecundaria() {
+        if (!this.isQuadrada())
+            return "Não é uma matriz quadrada\n"; //Se não for uma matriz quadrada return isto
+
+        let results: string = ""; // Criando variavel parece receber a matriz
+
+        for (let i = 0; i < this.L; i++) { // For das Linhas
+            for (let j = 0; j < this.C; j++) { // For das Colunas
+                if (j > (this.L - 1 - i))//Se Numero da Coluna Menor de Linha
+                    results += this.m[i][j]; // Resultado recebe ele mais matriz[Linha][Coluna]
+                else  //Senão
+                    results += ".."; // recebe ele + ... paraca um espaço em branco
+
+                results += "\t"; //Da um espaço // Tabulação
+            }
+
+            results += "\n"; //Pula linha
+        }
+
+        return results;
+    }
+
+    // Resolução Minha
+    // public transposta(): string {
+    //     if (!this.isQuadrada()) {
+    //         return "Não é uma matriz quadrada\n"
+    //     }
+
+    //     let results: string = "";
+
+    //     for (let j = 0; j < this.C; j++) {
+    //         for (let i = 0; i < this.L; i++) {
+    //             results += this.m[i][j];
+    //             results += "\t"
+    //         }
+    //         results += "\n"
+    //     }
+    //     return results
+    // }
+
+    public transposta(): number[][] {
+
+        let results: number[][] = [];
+
+
+        for (let j = 0; j < this.C; j++) {
+            results[j] = [];
+            for (let i = 0; i < this.L; i++) {
+                results[j][i] = this.m[i][j];
+            }
+        }
+        return results;
+    }
+    // Resolução Professor
+
+    // Dificuldade compatível com a avaliação
+    public transpostaProfessor(): number[][] {
+        let aux: number[][] = [];
+
+        for (let i = 0; i < this.L; i++) {
+            aux[i] = [];
+
+            for (let j = 0; j < this.C; j++)
+                aux[i][j] = this.m[j][i];
+        }
+
+        return aux;
+    }
+
+    public multiplicaPorMatriz(n: number[][]): number[][] {
+
+        if (this.C != n.length!)
+            return [];
+
+        let results: number[][] = [];
+
+        let linhas: number = this.L,
+            colunas: number = n[0].length;
+
+        for (let i = 0; i < linhas; i++) {
+            results[i] = [];
+
+            for (let j = 0; j < colunas; j++) {
+                results[i][j] = 0;
+                for (let k = 0; k < this.C; k++)
+                    results[i][j] += this.m[i][k] * n[k][j];
+            }
+        }
+        return results;
+    }
+
 }
