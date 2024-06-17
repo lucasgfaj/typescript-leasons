@@ -288,36 +288,6 @@ export class Autodromo {
     }
 }
 
-// export class MatrizAleatoria {
-//     matriz: number[][]; // Declaração do atributo matriz, que é uma matriz de números inteiros
-
-//     constructor(l: number, c: number) { // Definição do construtor, que recebe o número de linhas (l) e colunas (c)
-//         this.matriz = this.criarMatrizAleatoria(l, c); // Inicialização da matriz chamando o método criarMatrizAleatoria
-//     }
-
-//     private criarMatrizAleatoria(l: number, c: number): number[][] { // Definição do método privado criarMatrizAleatoria
-//         const matriz: number[][] = []; // Declaração de uma matriz vazia
-//         for (let i = 0; i < l; i++) { // Loop para percorrer as linhas da matriz
-//             matriz[i] = []; // Inicializa cada linha como um array vazio
-//             for (let j = 0; j < c; j++) { // Loop para percorrer as colunas da matriz
-//                 matriz[i][j] = Math.floor(Math.random() * 100); // Gera um número aleatório entre 0 e 99 e atribui à posição (i, j) da matriz
-//             }
-//         }
-//         return matriz; // Retorna a matriz preenchida com números aleatórios
-//     }
-
-//     listMatriz(): string { // Definição do método toString que retorna uma string representando a matriz
-//         let result = ""; // Inicializa uma string vazia para armazenar a representação da matriz
-//         for (let i = 0; i < this.matriz.length; i++) { // Loop para percorrer as linhas da matriz
-//             for (let j = 0; j < this.matriz[i].length; j++) { // Loop para percorrer as colunas da matriz
-//                 result += this.matriz[i][j] + "\t"; // Adiciona o elemento da posição (i, j) seguido de uma tabulação ("\t") à string result
-//             }
-//             result += "\n"; // Adiciona uma quebra de linha ("\n") ao final de cada linha da matriz
-//         }
-//         return result; // Retorna a string representando a matriz
-//     }
-// }
-
 export class MatrizAleatoria {
     public readonly L: number;
     public readonly C: number;
@@ -419,6 +389,7 @@ export class MatrizAleatoria {
             for (let i = 0; i < this.L; i++)
                 diagonalSecundaria.push(this.m[i][this.C - 1 - i])
         }
+        return diagonalSecundaria
     }
 
     public trianguloSuperiorPrincipal(): string {
