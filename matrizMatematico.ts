@@ -549,4 +549,26 @@ export class MatrizAleatoria {
         return results;
     }
 
+    public maiorElementoDaLinhaMenor(): number {
+        let menorElemento = this.m[0][0];
+        let linhaMenorElemento = 0;
+
+        for (let i = 1; i < this.L; i++) {
+            for (let j = 0; j < this.C; j++) {
+                if (this.m[i][j] < menorElemento) {
+                    menorElemento = this.m[i][j];
+                    linhaMenorElemento = i;
+                }
+            }
+        }
+
+        let maiorElemento = this.m[linhaMenorElemento][0];
+        for (let j = 1; j < this.C; j++) {
+            if (this.m[linhaMenorElemento][j] > maiorElemento) {
+                maiorElemento = this.m[linhaMenorElemento][j];
+            }
+        }
+
+        return maiorElemento;
+    }
 }

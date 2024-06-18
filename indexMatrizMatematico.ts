@@ -171,25 +171,30 @@ console.log(aleatoria.toString());
 // console.log("Triangulo Inferior Secundario");
 // console.log(aleatoria.trianguloInferiorSecundaria());
 
-console.log("Transposta");
-console.log(aleatoria.transposta());
+// console.log("Transposta");
+// console.log(aleatoria.transposta());
 
-console.log("TranspostaProfessor");
-console.log(aleatoria.transpostaProfessor());
+// console.log("TranspostaProfessor");
+// console.log(aleatoria.transpostaProfessor());
 
-console.log("Criando a matriz O de ordem 3 x 4\n");
-let o: number[][] = [
-  [1, 2, 3, 4],
-  [5, 6, 7, 8],
-  [9, 10, 11, 12],
-];
+// console.log("Criando a matriz O de ordem 3 x 4\n");
+// let o: number[][] = [
+//   [1, 2, 3, 4],
+//   [5, 6, 7, 8],
+//   [9, 10, 11, 12],
+// ];
 
-console.log("Criando uma matriz aleatória M de ordem 4 x 3\n");
-let umaMatriz: MatrizAleatoria = new MatrizAleatoria(4, 3);
+// console.log("Criando uma matriz aleatória M de ordem 4 x 3\n");
+// let umaMatriz: MatrizAleatoria = new MatrizAleatoria(4, 3);
 
-console.log("Multiplicando a matrix M (4x3) pela matriz O (3x4):");
-console.log(umaMatriz.multiplicaPorMatriz(o));
+// console.log("Multiplicando a matrix M (4x3) pela matriz O (3x4):");
+// console.log(umaMatriz.multiplicaPorMatriz(o));
+// console.log();
+
+console.log("Simulado 1");
+console.log(aleatoria.maiorElementoDaLinhaMenor());
 console.log();
+
 
 
 
