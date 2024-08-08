@@ -70,3 +70,47 @@ funcionário:
 
 https://www.ic.unicamp.br/~santanch/classic/teaching/oop/2019-1/exercicios/poo-exercicios-01-estruturas-v01.pdf
 */
+
+export class AumentaSalario {
+  private salario: number;
+  private funcionario: string;
+
+  public constructor (salario: number, funcionario: string) {
+    this.salario = salario;
+    this.funcionario = funcionario;
+  }
+
+  public getFuncionario (): string {
+    return this.funcionario
+  }
+  public setFuncionario (funcionario: string): void {
+    this.funcionario = funcionario;
+  }
+  public getSalario(): number {
+    return this.salario
+  }
+  public setSalario (salario: number): void {
+    this.salario = salario;
+  }
+  
+  public calculaAcrescimo (): number {
+      if (this.salario <= 1500)
+        return this.salario * 0.25;
+  
+      if (this.salario <= 3000)
+        return this.salario * 0.20;
+
+      if (this.salario <= 6000)
+        return this.salario * 0.15;
+
+    return this.salario * 0.10;
+}
+
+public salarioReajustado(): string {
+  const acrescimo = this.calculaAcrescimo();
+  const novoSalario = this.salario + acrescimo;
+
+  return `Olá, ${this.funcionario}. Seu salário aumentou de R$${this.salario.toFixed(2)} para R$${novoSalario.toFixed(2)}, um acréscimo de R$${acrescimo.toFixed(2)}.`;
+}
+}
+
