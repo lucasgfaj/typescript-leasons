@@ -1,4 +1,4 @@
-import { NumerosInfSup, AumentaSalario } from "./ListaPOO1";
+import { NumerosInfSup, AumentaSalario, ConverorComputacional } from "./ListaPOO1";
 
 /*
 let painelNum = new NumerosInfSup(1, 10);
@@ -17,3 +17,13 @@ let reajusteSalario = new AumentaSalario(3000, "Lucas");
     console.log(reajusteSalario.salarioReajustado());
     console.log();
 */
+
+
+let conversor = new ConverorComputacional(8);
+
+    console.log("Conversor Computacional");
+    console.log();
+    console.log("Converte Binário");
+    console.log();
+    console.log (conversor.convertBinario());
+    console.log();

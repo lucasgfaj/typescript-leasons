@@ -117,3 +117,40 @@ public salarioReajustado(): string {
 /*
 Escreva um programa que leia um número inteiro e mostre a sua conversão em binário
 */
+
+export class ConverorComputacional {
+  private n: number;
+
+  public constructor (n: number){
+    this.n = n;
+  }
+
+  public getN (): number{
+    return this.n;
+  }
+
+  public setN (n: number): void{
+    this.n = n;
+  }
+
+  public convertBinario(): number[] {
+
+    let binario: number [] = [];
+    let number = this.n;
+
+    if ( number === 0) {
+      return [0];
+    }
+
+    while (number > 0) {
+      binario.push(number % 2);
+      number = Math.floor(number / 2); //Posso utilizar também Math.trun(number / 2);
+    }
+
+    binario.reverse();
+
+    return binario;
+  }
+
+
+}
