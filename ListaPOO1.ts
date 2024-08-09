@@ -114,3 +114,6 @@ public salarioReajustado(): string {
 }
 }
 
+/*
+Escreva um programa que leia um número inteiro e mostre a sua conversão em binário
+*/
