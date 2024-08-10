@@ -25,5 +25,9 @@ let conversor = new ConverorComputacional(8);
     console.log();
     console.log("Converte Binário");
     console.log();
-    console.log (conversor.convertBinario());
+    console.log(conversor.convertBinario());
     console.log();
+    console.log("Converte Binário para Decimal");
+    console.log(conversor.convertDecimal());
+    console.log();
+    

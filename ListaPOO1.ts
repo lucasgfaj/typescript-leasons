@@ -152,5 +152,20 @@ export class ConverorComputacional {
     return binario;
   }
 
+  public convertDecimal(): number {
+    let decimal = 0;
+    const binarioArray = this.convertBinario();
+
+    for (let i = 0; i < binarioArray.length; i++) {
+
+        const digito = binarioArray[binarioArray.length - 1 - i];
+        
+        decimal += digito * Math.pow(2, i);
+    }
+
+    return decimal;
+}
+
+  convertHexadecimal() {}
 
 }
