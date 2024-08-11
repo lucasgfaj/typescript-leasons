@@ -165,7 +165,11 @@ export class ConverorComputacional {
 
     return decimal;
 }
-
-  convertHexadecimal() {}
+  convertOctal() {
+    let octo = 0;
+  }	
+  convertHexadecimal() {
+    let hexadecimal = 0;
+  }
 
 }
