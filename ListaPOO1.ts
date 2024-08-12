@@ -166,10 +166,34 @@ export class ConverorComputacional {
     return decimal;
 }
   convertOctal() {
-    let octo = 0;
+    const binarioArray = this.convertBinario();
+    let octal = '';
+
+    while (binarioArray.length % 3 !== 0) {
+      binarioArray.unshift(0);
+    }
+
+    for (let i = 0; i < binarioArray.length; i += 3){
+      const grupo = binarioArray.slice(i, i + 3);
+      const grupoDecimal = grupo.reduce((acc, bit, index) => acc + bit * Math.pow(2, 2 - index), 0);
+      octal += grupoDecimal.toString();
+    }
+    return octal;
   }	
   convertHexadecimal() {
-    let hexadecimal = 0;
+    const binarioArray = this.convertBinario();
+    let hexadecimal = '';
+
+    while (binarioArray.length % 4 !== 0) {
+      binarioArray.unshift(0);
+    }
+
+    for (let i = 0; i < binarioArray.length; i += 4){
+      const grupo = binarioArray.slice(i, i + 4);
+      const grupoDecimal = grupo.reduce((acc, bit, index) => acc + bit * Math.pow(2, 3 - index), 0);
+      hexadecimal += grupoDecimal.toString(16).toUpperCase();
+    }
+    return hexadecimal;
   }
 
 }

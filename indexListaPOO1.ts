@@ -19,6 +19,7 @@ let reajusteSalario = new AumentaSalario(3000, "Lucas");
 */
 
 
+/*
 let conversor = new ConverorComputacional(8);
 
     console.log("Conversor Computacional");
@@ -30,4 +31,12 @@ let conversor = new ConverorComputacional(8);
     console.log("Converte Binário para Decimal");
     console.log(conversor.convertDecimal());
     console.log();
+    console.log("Converte Binário para Octal");
+    console.log(conversor.convertOctal());
+    console.log();
+    console.log("Converte Binário para HexaDecimal");
+    console.log(conversor.convertHexadecimal());
+    console.log();
+*/   
+    
     
