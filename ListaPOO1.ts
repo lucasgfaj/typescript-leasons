@@ -13,6 +13,15 @@ Retorno [A, B];
 (coluna c da tabela) associados aos números 0 a 127 (números Unicode U+0000 a U+007F). 
 O conjunto de todos os caracteres da tabela constitui o alfabeto ASCII.*/
 
+/*
+Exercicios:
+
+https://www.ic.unicamp.br/~santanch/classic/teaching/oop/2019-1/exercicios.html
+
+Lista 1:
+
+https://www.ic.unicamp.br/~santanch/classic/teaching/oop/2019-1/exercicios/poo-exercicios-02-classes-v01.pdf
+*/
   
 /*
 Escreva um programa que carregue dois valores A e B pelo teclado e imprima todos os números
@@ -196,4 +205,46 @@ export class ConverorComputacional {
     return hexadecimal;
   }
 
+}
+
+/* 
+Os números de Fibonacci formam uma sequência em que cada número é igual à soma dos dois
+anteriores. Os dois primeiros números são, por definição igual a 1, segundo o exemplo abaixo:
+Ex: 1 1 2 3 5 8 13 ...
+Escreva um programa que carregue um carregue um número inteiro pelo teclado e indique se ele faz
+parte da sequência de Fibonacci.
+*/
+
+export class testFibonnaci {
+  private n: number;  
+
+  constructor(n: number) {
+    this.n = n;
+  }
+
+  public getN (): number{
+    return this.n;
+  }
+
+  public setN (n: number): void{
+    this.n = n;
+  }
+
+  public serieFibonacci(): number[] {
+    if (this.n == 0) {
+      return []; // Matriz unidimensional vazia
+    }
+  
+    if (this.n == 1) {
+      return [1];
+    }
+  
+    let termos: number[] = [1, 1]; // Dois primeiros termos
+  
+    for (let i = 3; i < this.n; i++) { // Corrige o loop começando em 2
+      termos.push(termos[i-2] + termos[i-3]);
+    }
+  
+    return termos; // Retorna o array final
+  }
 }
