@@ -22,57 +22,55 @@ Lista 1:
 
 https://www.ic.unicamp.br/~santanch/classic/teaching/oop/2019-1/exercicios/poo-exercicios-02-classes-v01.pdf
 */
-  
+
 /*
 Escreva um programa que carregue dois valores A e B pelo teclado e imprima todos os números
 ímpares entre A e B.
 */
-  export class NumerosInfSup {
-    private inferior: number;
-    private superior: number;
-  
-    public constructor(inferior: number, superior: number){
-      this.inferior = inferior;
-      this.superior = superior;
-    }
-    public getInferior(): number{
-      return this.inferior;
-    }
-    public getSuperior(): number{
-      return this.superior;
-    }
-    public setInferior(inferior: number): void{
-      this.inferior = inferior;
-      this.validaIntervalo();
-    }
-    public setSuperior(superior: number): void{
-      this.superior = superior;
-      this.validaIntervalo();
-    }
-  
-    private validaIntervalo(): void{
-      if (this.inferior > this.superior){
-        let aux: number = this.inferior;
-        this.inferior = this.superior;
-        this.superior = aux
-        }
-      }
+export class NumerosInfSup {
+  private inferior: number;
+  private superior: number;
 
-      public contagemImpares(): void{
-        let i: number = this.inferior;  
-        
-    
-        if (i % 2 == 0)
-          i++;
-            
-        while(i <= this.superior){
-          console.log(i);
-           i+= 2;
-        }
-      }
-    }
+  public constructor(inferior: number, superior: number) {
+    this.inferior = inferior;
+    this.superior = superior;
+  }
+  public getInferior(): number {
+    return this.inferior;
+  }
+  public getSuperior(): number {
+    return this.superior;
+  }
+  public setInferior(inferior: number): void {
+    this.inferior = inferior;
+    this.validaIntervalo();
+  }
+  public setSuperior(superior: number): void {
+    this.superior = superior;
+    this.validaIntervalo();
+  }
 
- /* 
+  private validaIntervalo(): void {
+    if (this.inferior > this.superior) {
+      let aux: number = this.inferior;
+      this.inferior = this.superior;
+      this.superior = aux;
+    }
+  }
+
+  public contagemImpares(): void {
+    let i: number = this.inferior;
+
+    if (i % 2 == 0) i++;
+
+    while (i <= this.superior) {
+      console.log(i);
+      i += 2;
+    }
+  }
+}
+
+/* 
 Escreva um programa que leia o nome e salário atual de um funcionário. O programa deve calcular
 seu novo salário (segundo a tabela abaixo) e mostrar o nome, o salário atual e o salário reajustado do
 funcionário:
@@ -84,43 +82,46 @@ export class AumentaSalario {
   private salario: number;
   private funcionario: string;
 
-  public constructor (salario: number, funcionario: string) {
+  public constructor(salario: number, funcionario: string) {
     this.salario = salario;
     this.funcionario = funcionario;
   }
 
-  public getFuncionario (): string {
-    return this.funcionario
+  public getFuncionario(): string {
+    return this.funcionario;
   }
-  public setFuncionario (funcionario: string): void {
+  public setFuncionario(funcionario: string): void {
     this.funcionario = funcionario;
   }
   public getSalario(): number {
-    return this.salario
+    return this.salario;
   }
-  public setSalario (salario: number): void {
+  public setSalario(salario: number): void {
     this.salario = salario;
   }
-  
-  public calculaAcrescimo (): number {
-      if (this.salario <= 1500)
-        return this.salario * 0.25;
-  
-      if (this.salario <= 3000)
-        return this.salario * 0.20;
 
-      if (this.salario <= 6000)
-        return this.salario * 0.15;
+  public calculaAcrescimo(): number {
+    if (this.salario <= 1500) return this.salario * 0.25;
 
-    return this.salario * 0.10;
-}
+    if (this.salario <= 3000) return this.salario * 0.2;
 
-public salarioReajustado(): string {
-  const acrescimo = this.calculaAcrescimo();
-  const novoSalario = this.salario + acrescimo;
+    if (this.salario <= 6000) return this.salario * 0.15;
 
-  return `Olá, ${this.funcionario}. Seu salário aumentou de R$${this.salario.toFixed(2)} para R$${novoSalario.toFixed(2)}, um acréscimo de R$${acrescimo.toFixed(2)}.`;
-}
+    return this.salario * 0.1;
+  }
+
+  public salarioReajustado(): string {
+    const acrescimo = this.calculaAcrescimo();
+    const novoSalario = this.salario + acrescimo;
+
+    return `Olá, ${
+      this.funcionario
+    }. Seu salário aumentou de R$${this.salario.toFixed(
+      2
+    )} para R$${novoSalario.toFixed(2)}, um acréscimo de R$${acrescimo.toFixed(
+      2
+    )}.`;
+  }
 }
 
 /*
@@ -130,24 +131,23 @@ Escreva um programa que leia um número inteiro e mostre a sua conversão em bin
 export class ConverorComputacional {
   private n: number;
 
-  public constructor (n: number){
+  public constructor(n: number) {
     this.n = n;
   }
 
-  public getN (): number{
+  public getN(): number {
     return this.n;
   }
 
-  public setN (n: number): void{
+  public setN(n: number): void {
     this.n = n;
   }
 
   public convertBinario(): number[] {
-
-    let binario: number [] = [];
+    let binario: number[] = [];
     let number = this.n;
 
-    if ( number === 0) {
+    if (number === 0) {
       return [0];
     }
 
@@ -166,45 +166,49 @@ export class ConverorComputacional {
     const binarioArray = this.convertBinario();
 
     for (let i = 0; i < binarioArray.length; i++) {
+      const digito = binarioArray[binarioArray.length - 1 - i];
 
-        const digito = binarioArray[binarioArray.length - 1 - i];
-        
-        decimal += digito * Math.pow(2, i);
+      decimal += digito * Math.pow(2, i);
     }
 
     return decimal;
-}
+  }
   convertOctal() {
     const binarioArray = this.convertBinario();
-    let octal = '';
+    let octal = "";
 
     while (binarioArray.length % 3 !== 0) {
       binarioArray.unshift(0);
     }
 
-    for (let i = 0; i < binarioArray.length; i += 3){
+    for (let i = 0; i < binarioArray.length; i += 3) {
       const grupo = binarioArray.slice(i, i + 3);
-      const grupoDecimal = grupo.reduce((acc, bit, index) => acc + bit * Math.pow(2, 2 - index), 0);
+      const grupoDecimal = grupo.reduce(
+        (acc, bit, index) => acc + bit * Math.pow(2, 2 - index),
+        0
+      );
       octal += grupoDecimal.toString();
     }
     return octal;
-  }	
+  }
   convertHexadecimal() {
     const binarioArray = this.convertBinario();
-    let hexadecimal = '';
+    let hexadecimal = "";
 
     while (binarioArray.length % 4 !== 0) {
       binarioArray.unshift(0);
     }
 
-    for (let i = 0; i < binarioArray.length; i += 4){
+    for (let i = 0; i < binarioArray.length; i += 4) {
       const grupo = binarioArray.slice(i, i + 4);
-      const grupoDecimal = grupo.reduce((acc, bit, index) => acc + bit * Math.pow(2, 3 - index), 0);
+      const grupoDecimal = grupo.reduce(
+        (acc, bit, index) => acc + bit * Math.pow(2, 3 - index),
+        0
+      );
       hexadecimal += grupoDecimal.toString(16).toUpperCase();
     }
     return hexadecimal;
   }
-
 }
 
 /* 
@@ -216,17 +220,17 @@ parte da sequência de Fibonacci.
 */
 
 export class testFibonnaci {
-  private n: number;  
+  private n: number;
 
   constructor(n: number) {
     this.n = n;
   }
 
-  public getN (): number{
+  public getN(): number {
     return this.n;
   }
 
-  public setN (n: number): void{
+  public setN(n: number): void {
     this.n = n;
   }
 
@@ -234,17 +238,101 @@ export class testFibonnaci {
     if (this.n == 0) {
       return []; // Matriz unidimensional vazia
     }
-  
-    if (this.n == 1) {
-      return [1];
-    }
-  
+
     let termos: number[] = [1, 1]; // Dois primeiros termos
-  
-    for (let i = 3; i < this.n; i++) { // Corrige o loop começando em 2
-      termos.push(termos[i-2] + termos[i-3]);
+
+    for (let i = 2; i < this.n; i++) {
+      // Corrige o loop começando em 2
+      termos.push(termos[i - 1] + termos[i - 2]);
     }
-  
+
     return termos; // Retorna o array final
   }
+
+  public isInFibonacciSequence(): boolean {
+    if (this.n <= 0) return false;
+
+    let a = 1,
+      b = 1;
+    while (b < this.n) {
+      let temp = b;
+      b = a + b;
+      a = temp;
+    }
+    return b === this.n || a === this.n;
+  }
+}
+
+/*
+Um banco realiza empréstimos nas seguintes condições:
+
+* são tomados “P” reais emprestados;
+* “A” reais serão pagos cada mês até que o empréstimo seja quitado;
+* parte do pagamento mensal serão juros, calculados como "i" por cento do saldo corrente;
+* o restante será aplicado no pagamento da dívida.
+Escreva um programa que leia estes três valores: P, A, i e determine:
+
+* Para cada mês:
+
+a) valor em dinheiro dos juros pagos;
+b) valor em dinheiro aplicada no pagamento da dívida;
+c) valor acumulado de juros já pagos;
+d) valor ainda por pagar do empréstimo no fim de cada mês;
+
+* No final do programa:
+e) número de meses necessários para pagar o empréstimo;
+f) quantidade da última prestação.
+*/
+
+export class BankLoan {
+  private p: number;
+  private a: number;
+  private i: number;
+
+  public constructor(p: number, a: number, i: number) {
+    this.p = p;
+    this.a = a;
+    this.i = i;
+  }
+
+  public getP(): number {
+    return this.p;
+  }
+
+  public getA(): number {
+    return this.a;
+  }
+
+  public getI(): number {
+    return this.i;
+  }
+
+  public setP(p: number): void {
+    this.p = p;
+  }
+
+  public setA(a: number): void {
+    this.a = a;
+  }
+
+  public setI(i: number): void {
+    this.i = i;
+  }
+
+  public interestCalc () {
+
+  }
+
+  public amountOfDebtPayment() {
+
+  }
+
+  public interestPaid() {
+
+  }
+
+  public amountToBePaid(){
+    
+  }
+
 }

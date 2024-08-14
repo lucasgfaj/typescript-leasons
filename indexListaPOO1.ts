@@ -1,4 +1,4 @@
-import { NumerosInfSup, AumentaSalario, ConverorComputacional } from "./ListaPOO1";
+import { NumerosInfSup, AumentaSalario, ConverorComputacional, testFibonnaci } from "./ListaPOO1";
 
 /*
 let painelNum = new NumerosInfSup(1, 10);
@@ -38,5 +38,11 @@ let conversor = new ConverorComputacional(8);
     console.log(conversor.convertHexadecimal());
     console.log();
 */   
-    
-    
+
+/*
+const fibTest = new testFibonnaci(4);
+console.log("Serie Fibonacci");
+console.log(fibTest.serieFibonacci()); // Saída: [1, 1, 2, 3, 5, 8]
+console.log("Verifica se pertence a sequência Finbonacci")
+console.log(fibTest.isInFibonacciSequence()); // Saída: true, pois 8 faz parte da sequência'
+*/
