@@ -285,16 +285,21 @@ f) quantidade da última prestação.
 */
 
 export class BankLoan {
-  private p: number;
-  private a: number;
-  private i: number;
+  private p: number; // Valor do empréstimo (principal)
+  private a: number; // Pagamento mensal 
+  private i: number; // Taxa de juros (%) ao mês
+  private totalInterestPaid: number; // Total de juros pagos acumulados
+  private months: number; // Número de meses necessários para pagar o empréstimo
 
   public constructor(p: number, a: number, i: number) {
     this.p = p;
     this.a = a;
-    this.i = i;
+    this.i = i / 100; // Transformar a taxa de juros em valor decimal
+    this.totalInterestPaid = 0;
+    this.months = 0;
   }
 
+  // Getters
   public getP(): number {
     return this.p;
   }
@@ -304,9 +309,18 @@ export class BankLoan {
   }
 
   public getI(): number {
-    return this.i;
+    return this.i * 100; // Retorna a taxa de juros como porcentagem
   }
 
+  public getTotalInterestPaid(): number {
+    return this.totalInterestPaid;
+  }
+
+  public getMonths(): number {
+    return this.months;
+  }
+
+  // Setters
   public setP(p: number): void {
     this.p = p;
   }
@@ -316,23 +330,53 @@ export class BankLoan {
   }
 
   public setI(i: number): void {
-    this.i = i;
+    this.i = i / 100; // Define a taxa de juros como decimal
   }
 
-  public interestCalc () {
-
+  // Método para calcular os juros de um determinado mês
+  private interestCalc(): number {
+    return this.p * this.i; // Juros são calculados sobre o saldo devedor atual
   }
 
-  public amountOfDebtPayment() {
-
+  // Método para calcular o valor aplicado ao pagamento da dívida (excluindo os juros)
+  private amountOfDebtPayment(interest: number): number {
+    return this.a - interest;
   }
 
-  public interestPaid() {
+  // Método principal para simular o pagamento do empréstimo mês a mês
+  public simulateLoan(): void {
+    let remainingLoan = this.p;
 
+    while (remainingLoan > 0) {
+      this.months++;
+
+      // Calcular os juros do mês atual
+      const interest = this.interestCalc();
+      const debtPayment = this.amountOfDebtPayment(interest);
+
+      // Atualizar saldo devedor
+      remainingLoan -= debtPayment;
+
+      // Acumular os juros pagos
+      this.totalInterestPaid += interest;
+
+      // Exibir os detalhes de cada mês
+      console.log(`Mês ${this.months}:`);
+      console.log(`  Juros pagos: R$ ${interest.toFixed(2)}`);
+      console.log(`  Valor aplicado na dívida: R$ ${debtPayment.toFixed(2)}`);
+      console.log(`  Total de juros pagos até agora: R$ ${this.totalInterestPaid.toFixed(2)}`);
+      console.log(`  Saldo devedor: R$ ${remainingLoan > 0 ? remainingLoan.toFixed(2) : '0.00'}\n`);
+
+      // Se o saldo devedor for menor que o pagamento mensal, realizar o pagamento final
+      if (remainingLoan < this.a && remainingLoan > 0) {
+        console.log(`Último pagamento de R$ ${remainingLoan.toFixed(2)} será efetuado no mês ${this.months + 1}.`);
+        this.totalInterestPaid += this.interestCalc();
+        break;
+      }
+    }
+
+    // Exibir o resumo final
+    console.log(`\nEmpréstimo quitado em ${this.months} meses.`);
+    console.log(`Total de juros pagos: R$ ${this.totalInterestPaid.toFixed(2)}.`);
   }
-
-  public amountToBePaid(){
-    
-  }
-
 }
