@@ -380,3 +380,28 @@ export class BankLoan {
     console.log(`Total de juros pagos: R$ ${this.totalInterestPaid.toFixed(2)}.`);
   }
 }
+
+/*
+Escreva um programa que determine se uma cadeia de caracteres é um palíndromo ou não. Um
+palíndromo é uma cadeia que é igual à sua inversa.
+Exemplos: ASA = ASA (inverso) → é um PALÍNDROMO
+JOAO <> OAOJ (inverso) → não é um PALÍNDROMO
+343 = 343 (inverso) → é um PALÍNDROMO
+*/
+
+export class ConvertPalindromo {
+  private n: any;
+
+  public constructor (n: any){
+    this.n = n
+  }
+
+  public invertePalindromo(): any {
+
+  }
+
+  public testaPalindromo(): boolean {
+
+    return false;
+  }
+}
