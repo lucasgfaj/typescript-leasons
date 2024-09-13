@@ -390,18 +390,21 @@ JOAO <> OAOJ (inverso) → não é um PALÍNDROMO
 */
 
 export class ConvertPalindromo {
-  private n: any;
+  private n: string;
 
-  public constructor (n: any){
+  public constructor (n: string){
     this.n = n
   }
 
-  public invertePalindromo(): any {
-
+  public invertePalindromo(): string {
+    let palavraInvertida = "";
+    for (let i = this.n.length - 1; i >= 0; i--)
+      palavraInvertida += this.n[i];  
+  
+      return palavraInvertida;
   }
 
   public testaPalindromo(): boolean {
-
-    return false;
+    return this.n === this.invertePalindromo();  
   }
 }

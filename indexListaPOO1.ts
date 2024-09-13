@@ -1,4 +1,4 @@
-import { NumerosInfSup, AumentaSalario, ConverorComputacional, testFibonnaci, BankLoan } from "./ListaPOO1";
+import { NumerosInfSup, AumentaSalario, ConverorComputacional, testFibonnaci, BankLoan, ConvertPalindromo} from "./ListaPOO1";
 
 /*
 let painelNum = new NumerosInfSup(1, 10);
@@ -50,4 +50,9 @@ console.log(fibTest.isInFibonacciSequence()); // Saída: true, pois 8 faz parte 
 /* 
 const loan = new BankLoan(10000, 1000, 5); // P = 10000, A = 1000, i = 5%
 loan.simulateLoan();
+*/
+
+/*
+const testaPalindromo = new ConvertPalindromo("joao");
+console.log(testaPalindromo.testaPalindromo());
 */
