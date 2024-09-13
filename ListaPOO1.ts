@@ -408,3 +408,15 @@ export class ConvertPalindromo {
     return this.n === this.invertePalindromo();  
   }
 }
+
+/*
+Escreva um módulo para calcular as raízes de uma equação de 2° grau. O módulo receber as
+constantes A, B e C da equação como parâmetro e retorna três valores: 2 raízes e um STATUS, seguindo os
+critérios:
+* se houverem duas raízes retorna status 2;
+* se houver uma raiz apenas retorna status 1 e um dos parâmetros de raiz igual a 0;
+* se não houverem raízes retorna status 0 e os dois parâmetros de raiz igual a 0.
+*/
+
+export class calculaRaiz {
+ }
